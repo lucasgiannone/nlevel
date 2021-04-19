@@ -1,0 +1,143 @@
+#heroimg {
+  background: -webkit-gradient(linear, left top, right top, from(#92278f), color-stop(35%, #ef4136), to(#fbb040));
+  background: linear-gradient(90deg, #92278f 0%, #ef4136 35%, #fbb040 100%);
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: solid #EDEDED 1px;
+}
+
+#herotxt {
+  padding: 200px;
+  text-align: center;
+  color: white;
+}
+
+#homepage button {
+  background-color: #0b0c10;
+  border-radius: 5px;
+  color: white;
+  padding: 14px 20px;
+  margin: 50px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  outline: none;
+}
+
+#homepage button:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 1px 1px 5px black;
+          box-shadow: 1px 1px 5px black;
+}
+
+#homepage > .text {
+  font-size: 40px;
+  margin: 10px;
+  margin-inline: 10%;
+  width: 80%;
+  word-wrap: break-word;
+}
+
+#homepage-2 {
+  -webkit-box-shadow: 0px -20px 20px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px -20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.boxes {
+  margin-inline: 10%;
+  margin-block: 100px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  position: flex;
+  width: 80%;
+}
+
+.box-1 {
+  width: 16rem;
+  height: 16rem;
+  color: #0b0c10;
+}
+
+.box-2 {
+  width: 16rem;
+  height: 16rem;
+  color: #0b0c10;
+}
+
+.box-3 {
+  width: 16rem;
+  height: 16rem;
+  color: #0b0c10;
+}
+
+.iconepg {
+  background-image: linear-gradient(108.32deg, #92278F -10.4%, #EF4136 46.14%, #FBB040 99.98%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 5rem;
+  top: 0;
+  margin-left: 3rem;
+  color: #0b0c10;
+}
+
+.box-1 h3 {
+  margin-left: 2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #0b0c10;
+}
+
+.box-1 p {
+  margin-left: 2rem;
+  text-align: center;
+  font-size: 16px;
+}
+
+.medal {
+  font-size: 5rem;
+  top: 0;
+  margin-left: 3.5rem;
+  color: #0b0c10;
+}
+
+.box-2 h3 {
+  margin-left: 2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #0b0c10;
+}
+
+.box-2 p {
+  margin-left: 2rem;
+  text-align: center;
+  font-size: 16px;
+}
+
+.student {
+  font-size: 5rem;
+  top: 0;
+  margin-left: 3.5rem;
+  color: #0b0c10;
+}
+
+.box-3 h3 {
+  margin-left: 2rem;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #0b0c10;
+}
+
+.box-3 p {
+  margin-left: 2rem;
+  text-align: center;
+  font-size: 16px;
+}
+/*# sourceMappingURL=home.css.map */
