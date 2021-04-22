@@ -43,6 +43,7 @@
             }
         }
 
+
         public function logar($email, $senha){
             global $pdo;
             //verificar se existe o login

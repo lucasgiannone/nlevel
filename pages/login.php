@@ -82,31 +82,37 @@
                     case 1:echo"
                             <script>
                                 alert('Login efetuado com sucesso!');
-                                window.location.href='../dash/1/';
+                                window.location.href='../dash/';
                             </script>
                             ";
                     break;
-
-                    case 2:
-                        echo "
-                            <script>
-                                alert('Login efetuado com sucesso!');
-                                window.location.href='../dash/1/';
-                            </script>
-                        ";
+                    case 2:echo"
+                    <script>
+                        alert('Login efetuado com sucesso!');
+                        window.location.href='../dash/';
+                    </script>
+                    ";
                     break;
-
-                    case 3:
-                        echo "
-                            <script>
-                                alert('Login efetuado com sucesso!');
-                                window.location.href='../dash/3/';
-                            </script>
-                        ";
+                    case 3:echo"
+                    <script>
+                        alert('Login efetuado com sucesso!');
+                        window.location.href='../dash/';
+                    </script>
+                    ";
+                    case 4:echo"
+                    <script>
+                        alert('Login efetuado com sucesso!');
+                        window.location.href='../dash/';
+                    </script>
+                    ";
                     break;
 
                     default:
-                        header("location: index.php");
+                    echo"
+                    <script>
+                        window.location.href='../';
+                    </script>
+                    ";
                     break;
                 }
         }   else {

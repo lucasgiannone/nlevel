@@ -3,7 +3,6 @@
 <!-- HEAD -->
 <head>
 	<meta charset="utf-8">
-	<title id="title">Next Level</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- DEPENDENCIAS -->
 	<link href="css/default.css" rel="stylesheet">
