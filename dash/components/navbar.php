@@ -126,7 +126,7 @@
                     </a>
                     <div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link" href="#">Novo Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link" href="/dash/conteudo/cadastrar">Novo Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link" href="#">Programado</a></li>
                         </ul>
                     </div>

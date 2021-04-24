@@ -32,22 +32,12 @@
     <?php require '../components/navbar.php';?>
     <div class="app-wrapper">
         <div class="app-content">
-            <div class="container">
+            <div class="container row mw-100 mx-2">
                 <h1 class="page-title p-4 pb-0">Conteúdo</h1>
                     <!-- CONTEÚDO -->
-                    <?php 
-                    include('../../class/dbconn.php');
-                    $SelectQuery = "select * from conteudo order by id_conteudo LIMIT 10";
-                    $ExecuteQuery = mysqli_query($conn,$SelectQuery);
-                    while($row = mysqli_fetch_array($ExecuteQuery)){
-                            $cardimg= $url = '../assets/images/conteudo/'. '' . $row['imagem'];
-                            $cardtitle= $row['titulo'];
-                            $carddesc=$row['descricao'];
-                            $carddate=$row['data'];
-                            require '../components/card.php';                        
-                    }
+                    <?php
+                    include('../components/card.php');
                     ?>
-
             </div>
         </div>
     </div>
