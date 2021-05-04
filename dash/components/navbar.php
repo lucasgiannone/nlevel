@@ -101,7 +101,7 @@
                     </a>
                     <div id="submenu-4" class="collapse submenu submenu-4" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link <?= $uconteudo ?>" href="#">Seu Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?= $uconteudo ?>" href="/dash/usuario/index">Seu Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link <?= $certificados ?>" href="#">Certificados</a></li>
                         </ul>
                     </div>

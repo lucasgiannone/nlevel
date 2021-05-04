@@ -18,6 +18,20 @@ function cadastrarConteudo($conn, $nome_imagem, $titulo, $descricao, $data, $lin
   return mysqli_query($conn, $sql);
 }
 
+function registroconteudo($conn, $conteudo, $userid){
+  $sql = "SELECT * FROM conteudoaluno WHERE id_usuario = $userid AND id_conteudo = $conteudo";
+  $query = mysqli_query($conn, $sql);
+  if (mysqli_num_rows($query) > 0){
+    return "alert";
+  }
+  $sql = "INSERT into conteudoaluno (id_conteudo, id_usuario) VALUES ($conteudo, $userid)";
+  return mysqli_query($conn, $sql);
+}
+    
+
+
+
+
 function verificaNomeImagem($conn, $nome_imagem){
   $valid = false;
   $i = 0;

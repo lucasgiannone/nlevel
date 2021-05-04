@@ -86,6 +86,8 @@
         $titulo = addslashes($_REQUEST['titulo']);
         $descricao = addslashes($_REQUEST['descricao']);
         $link = addslashes($_REQUEST['link']);
+        $link = str_replace("https://www.youtube.com/watch?v=","",$link);
+
         $data = "{$_REQUEST['datetime']} {$_REQUEST['time']}";
 
         /**TRATAMENTO DE IMAGENS */

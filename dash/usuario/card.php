@@ -1,7 +1,12 @@
 <?php
 include('../../class/dbconn.php');
 
-$sql = "select * from conteudo order by data desc LIMIT 10";
+$sql = "SELECT 
+        cc.* FROM `conteudoaluno` c 
+    LEFT JOIN `conteudo` cc ON
+        cc.id_conteudo = c.id_conteudo
+    WHERE c.id_usuario = {$_SESSION['id_usuario']}
+";
 
 $query = mysqli_query($conn,$sql);
 
@@ -33,15 +38,6 @@ while($row = mysqli_fetch_array($query)){
         </div><!-- CARD BODY -->
         <div class="app-card-footer p-4 mt-auto">
             <a class="btn app-btn-secondary px-5 mx-4" href="/dash/conteudo/player?url=<?=$row['url']?>&titulo=<?=$row['titulo']?>">Ver conteúdo</a>
-            <?php
-                $sqlinscrito = "SELECT * FROM conteudoaluno WHERE id_usuario = {$_SESSION['id_usuario']} AND id_conteudo = {$row['id_conteudo']}";
-                $queryinscrito = mysqli_query($conn, $sqlinscrito);
-            if (mysqli_num_rows($queryinscrito) == 0){   
-            ?>
-            <a class="btn app-btn-secondary px-5 mx-3" href="../../class/conteudo.php?id_conteudo=<?=$row['id_conteudo']?>">Inscrever-se</a>
-            <?php 
-            }
-            ?>
         </div><!-- CARD FOOTER -->
     </div>
 </div>
