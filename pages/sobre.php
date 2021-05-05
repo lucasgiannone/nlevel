@@ -34,10 +34,17 @@
     </div>
 </nav>
 <!-- SOBRE -->
+<div id="homepage">
+        <div id="heroimg">
+            <div id="herotxt">
+                <div class="iconetv"><i class="bi bi-tv iconetv"></i></div>
+                <p>Aulas e Palestras</p>
+            </div>
+        </div>
             <div id="sobrepage">
 
-                <h1>Next Level</h1>
-                <h2>Conexão ao conhecimento!</h2>
+                <h1>Como funciona a transmissão</h1>
+                <h1>ao vivo de eventos online</h1>
             
                 <h2>O que fazemos</h2> 
                 <p>O Next Level é uma plataforma online, que busca conectar estudantes de nível técnico e superior aos congressos,

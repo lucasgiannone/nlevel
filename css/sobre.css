@@ -1,4 +1,33 @@
 @charset "UTF-8";
+/*Homepage div*/
+#heroimg {
+  background: -webkit-gradient(linear, left top, right top, from(#92278f), color-stop(35%, #ef4136), to(#fbb040));
+  background: linear-gradient(90deg, #92278f 0%, #ef4136 35%, #fbb040 100%);
+  height: 480px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: solid #EDEDED 1px;
+}
+
+#herotxt {
+  padding: 200px;
+  text-align: center;
+  color: white;
+}
+
+#homepage > .text {
+  font-size: 40px;
+  margin: 10px;
+  margin-inline: 10%;
+  width: 80%;
+  word-wrap: break-word;
+}
+
+#sobrepage > h1 {
+  text-align: center;
+}
+
 /* Top Navigation */
 * {
   padding: 0;
