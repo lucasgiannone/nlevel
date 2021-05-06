@@ -24,7 +24,7 @@
                 <li><a class="dropdown-item" href="/dash/perfil.php">Perfil</a></li>
                 <li><a class="dropdown-item" href="/pages/config.php">Configurações</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/dash/logout">Sair</a></li>
+                <li><a class="dropdown-item" href="/dash/logout.php">Sair</a></li>
             </ul>
         </div>
         <!-- // -->
@@ -43,7 +43,7 @@
     <a href="#" id="sidepanel-close" class="sidepanel-close d-xl-none">&times;</a>
         <!-- Logo Portal -->
         <div class="app-branding">
-        <a class="app-logo" href="index.php">
+        <a class="app-logo" href="/dash/">
         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="mx-3 bi bi-pencil" viewBox="0 0 16 16">
         <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
         </svg>
@@ -68,7 +68,7 @@
                 </li>
                 <!-- Botão conteudo -->
                 <li class="nav-item" >
-                    <a class="nav-link <?=$conteudo?>" href="/dash/conteudo">
+                    <a class="nav-link <?=$conteudo?>" href="/dash/conteudo/">
                         <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-files" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M4 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4z"/>
@@ -101,7 +101,7 @@
                     </a>
                     <div id="submenu-4" class="collapse submenu submenu-4" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link <?= $uconteudo ?>" href="/dash/usuario/index">Seu Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?= $uconteudo ?>" href="/dash/usuario/">Seu Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link <?= $certificados ?>" href="#">Certificados</a></li>
                         </ul>
                     </div>
@@ -126,7 +126,7 @@
                     </a>
                     <div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link" href="/dash/conteudo/cadastrar">Novo Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link" href="/dash/conteudo/cadastrar.php">Novo Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link" href="#">Programado</a></li>
                         </ul>
                     </div>
@@ -166,7 +166,7 @@
             <nav class="app-nav app-nav-footer">
                 <ul class="app-menu footer-menu list-unstyled">
                     <li class="nav-item">
-                    <a class="nav-link" href="./ajuda.php">
+                    <a class="nav-link" href="/dash/ajuda.php">
                             <span class="nav-icon">
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>

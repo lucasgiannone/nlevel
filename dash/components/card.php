@@ -32,7 +32,7 @@ while($row = mysqli_fetch_array($query)){
             <p class="card-text mt-3"><small class="text-muted"><?=$row['data']?></small></p>
         </div><!-- CARD BODY -->
         <div class="app-card-footer p-4 mt-auto">
-            <a class="btn app-btn-secondary px-5 mx-4" href="/dash/conteudo/player?url=<?=$row['url']?>&titulo=<?=$row['titulo']?>">Ver conteúdo</a>
+            <a class="btn app-btn-secondary px-5 mx-4" href="/dash/conteudo/player.php?url=<?=$row['url']?>&titulo=<?=$row['titulo']?>">Ver conteúdo</a>
             <?php
                 $sqlinscrito = "SELECT * FROM conteudoaluno WHERE id_usuario = {$_SESSION['id_usuario']} AND id_conteudo = {$row['id_conteudo']}";
                 $queryinscrito = mysqli_query($conn, $sqlinscrito);

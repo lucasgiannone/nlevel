@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/home.css">
 	<script>
         $("#herobtn").click(function(){
-            window.location='./pages/sobre';
+            window.location='./pages/sobre.php';
         });
     </script>
 </head>
@@ -31,12 +31,12 @@
                 <div class="box-2">
                     <div class="iconepg"><i class="fas fa-medal medal"></i></div>
                     <h3>Garantia de qualidade.</h3>
-                   <p>Faça o planejamento de sua carreira começando por aqui, aulas e eventos online.</p>
+                   <p>Faça o planejamento de sua carreira começando por aqui, cursos profissionalizantes.</p>
                 </div>
                 <div class="box-3">
                     <div class="iconepg"><i class="fas fa-user-graduate student"></i></div>
                     <h3>Compatíveis com o mercado.</h3>
-                   <p>Nossos eventos podem ajudar na sua carreira estudantil também.</p>
+                   <p>Nossos cursos podem ajudar na sua carreira estudantil também.</p>
                 </div>
             </div>
         </div>
