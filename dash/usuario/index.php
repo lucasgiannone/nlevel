@@ -7,18 +7,20 @@
         echo "
         <script>
             alert('Acesso não permitido!');
-            window.location='../../pages/login';
+            window.location='../../pages/login.php';
         </script>";
         session_destroy();
     } 
 
-    $conteudo = "active";
+    $uconteudo = "active";
+    $utoggle[0] = "true";
+    $utoggle[1] = "show";
 ?>
 <!DOCTYPE html>
 <!-- HEAD -->
 <html lang="en"> 
     <head>
-        <title>Aluno - Home</title>
+        <title>Seu conteúdo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Dependencias -->

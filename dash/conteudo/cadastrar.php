@@ -19,7 +19,7 @@
 <!-- HEAD -->
 <html lang="en"> 
     <head>
-        <title>Aluno - Home</title>
+        <title>Conteudo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Dependencias -->
@@ -32,38 +32,57 @@
     <body class="app">
     <?php require '../components/navbar.php';?>
     <div class="app-wrapper">
-        <div class="app-content">
-            <div class="app-container">
-            <h1 class="page-title">Novo conteúdo</h1>
-            <form method="POST" enctype="multipart/form-data">
-                <table>
-                    Novo Contéudo
-                    <input name="hidden" type="hidden" value="true">
-                    <tr>
-                        <td><label for="titulo">Titulo</label></td>
-                        <td><input name="titulo" type="text" required></td>        
-                    </tr>
-                    <tr>
-                        <td><label for="descricao">Descrição</label></td>
-                        <td><input name="descricao" type="text" required></td>        
-                    </tr>
-                    <tr>
-                        <td><label for="link">URL</label></td>
-                        <td><input name="link" type="link" required></td>        
-                    </tr>
-                    <tr>
-                        <td><label for="datetime">Data</label></td>
-                        <td><input name="datetime" type="date" required></td>
-                        <td><label for="time">Hora</label></td>
-                        <td><input name="time" type="time" value="00:00" required></td>          
-                    </tr>
-                    <tr>
-                        <td><label for="img">Imagem</label></td>
-                        <td><input name="img" type="file" required></td>           
-                    </tr>
-                    <tr><td><button class="btn" >Confirmar</button></td></tr>
-                </table>
-            </form>
+    <div class="app-content pt-3 p-md-3 p-lg-4">
+        <div class="card d-flex">
+            <div class="app-card m-4">
+                <div class="row">
+                    <!-- Icon -->
+                    <div class="col-auto">
+                        <div class="app-icon-holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <!-- Title -->
+                    <div class="col-auto">
+                        <h4 class="app-title m-2">Novo conteúdo</h4>
+                    </div>
+                </div>
+                <!-- Form as table -->
+                    <form method="POST" enctype="multipart/form-data">
+                        <table class="table w-100">
+                            <input name="hidden" type="hidden" value="true">
+                            <tr>
+                                <td><label for="titulo">Titulo</label></td>
+                                <td><input name="titulo" type="text" required></td>        
+                            </tr>
+                            <tr>
+                                <td><label for="descricao">Descrição</label></td>
+                                <td><input name="descricao" type="text" required></td>        
+                            </tr>
+                            <tr>
+                                <td><label for="link">URL</label></td>
+                                <td><input name="link" type="link" required></td>        
+                            </tr>
+                            <tr>
+                                <td><label for="datetime">Data</label></td>
+                                <td colspan="1"><input name="datetime" type="date" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="time">Hora</label></td>
+                                <td colspan="3"><input name="time" type="time" value="00:00" required></td>          
+                            </tr>
+                            <tr>
+                                <td><label for="img">Imagem</label></td>
+                                <td><input name="img" type="file" required></td>           
+                                </tr>
+                        </table>
+                        <button class="btn" >Confirmar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

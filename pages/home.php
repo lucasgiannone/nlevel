@@ -5,7 +5,7 @@
     <title id="title">Next Level - Home</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="/css/home.css">
 	<script>
         $("#herobtn").click(function(){
             window.location='./pages/sobre.php';
@@ -41,9 +41,6 @@
             </div>
         </div>
         <div class="text" >
-            <p>
-                
-            </p>
         </div>
     </div>
 </body>
