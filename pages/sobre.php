@@ -37,7 +37,7 @@
 <div id="homepage">
         <div id="heroimg">
             <div id="herotxt">
-                <div class="iconetv"><i class="bi bi-tv iconetv"></i></div>
+                <div><img id="iconetv" src="../images/4.png"></div>
                 <p>Aulas e Palestras</p>
             </div>
         </div>
