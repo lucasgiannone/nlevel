@@ -1,5 +1,5 @@
 <?php
-    require_once '../class/usuarios.php';
+    require_once './class/usuarios.php';
     $u = new Usuario;
 ?>
 <!DOCTYPE html>
@@ -11,15 +11,15 @@
     <title>Next Level - Registro</title>
 	<link rel="icon" href="https://athonedu.com.br/wp-content/uploads/2021/01/favicon.png" sizes="192x192">
 	<link rel="stylesheet" href="../css/registro.css">
-	<script src="../scripts/fontawesome.js" crossorigin="anonymous"></script>
-	<script src="../scripts/jquery.js"></script>
-	<script src="../scripts/mask.js"></script>
+	<script src="./scripts/fontawesome.js" crossorigin="anonymous"></script>
+	<script src="./scripts/jquery.js"></script>
+	<script src="./scripts/mask.js"></script>
 	<!-- SCRIPT NAV -->
-	<script src="../scripts/nav.js"></script>
+	<script src="./scripts/nav.js"></script>
 	<script type="text/javascript">		
 	$(document).ready(function () {
 	
-		$.getJSON('http://mendesepereira.neuroteks.com/entrevista/estados_cidades.json', (data) => {
+		$.getJSON('./scripts/estados_cidades.json', (data) => {
 			var options = '';	
 
 			$.each(data, function (key, val) {
@@ -54,25 +54,9 @@
 </script>
 </head>
 <body>
-<nav>
-    <div id="container">
-    <!-- Menu mobile a partir de checkbox -->
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-        <i class="fas fa-align-left"></i>
-    </label>
-    <!-- Logo -->
-    <a id="logo"><img class="logo"src="../images/athonLogo.svg"></a>
-    <!-- Botões da Navbar -->
-    <ul class="buttons">
-        <li class="item"><a class="link"	id="home" 	href="../">Home</a></li>
-        <li class="item"><a class="link" 	id="sobre"	href="./sobre.php">Sobre</a></li>
-        <li class="item"><a class="link"	id="login"	href="./login.php">Login</a></li>
-        <li class="item"><a class="link" 	id="reg"	href="./registro.php">Cadastre-se</a></li>
-        
-    </ul>
-    </div>
-</nav>
+<?php 
+require_once "./components/nav.php"
+?>
 <!-- FORM -->
 <div class="reg-wrap">
 	<form method="post">
@@ -158,7 +142,8 @@
                 if ($senha == $senhav)
 				{                
                     //conecta no banco Luiz Renan
-                    $u->conectar("next_level","localhost","root","");
+					$u->conectar("u871029417_athon","92.249.44.207","u871029417_athon","Vitor@123");
+					/*$u->conectar("next_level","localhost","root",""); */
                     if ($u->msgErro == "")
 					{                        
                         if($u->cadastrar($nome, $telefone, $dt_nasc, $estado, $cidade, $perfil, $genero, $email, $senha))

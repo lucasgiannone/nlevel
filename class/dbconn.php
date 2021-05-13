@@ -1,9 +1,15 @@
 <?php
 
+/*
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "next_level";
+*/
+$servername = "92.249.44.207";
+$username = "u871029417_athon";
+$password = "Vitor@123";
+$dbname = "u871029417_athon";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
