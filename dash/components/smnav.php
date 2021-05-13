@@ -22,7 +22,7 @@
                 <li><a class="dropdown-item" href="/dash/perfil.php">Perfil</a></li>
                 <li><a class="dropdown-item" href="/pages/config.php">Configurações</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="/dash/logout">Sair</a></li>
+                <li><a class="dropdown-item" href="/dash/logout.php">Sair</a></li>
             </ul>
         </div>
         <!-- // -->

@@ -16,12 +16,8 @@
   color: white;
 }
 
-#homepage > .text {
-  font-size: 40px;
-  margin: 10px;
-  margin-inline: 10%;
-  width: 80%;
-  word-wrap: break-word;
+#iconetv {
+  height: 250px;
 }
 
 #sobrepage > h1 {

@@ -26,9 +26,9 @@
     <!-- Botões da Navbar -->
     <ul class="buttons">
         <li class="item"><a class="link"	id="home" 	href="../">Home</a></li>
-        <li class="item"><a class="link" 	id="sobre"	href="./sobre">Sobre</a></li>
-        <li class="item"><a class="link"	id="login"	href="./login">Login</a></li>
-        <li class="item"><a class="link" 	id="reg"	href="./registro">Cadastre-se</a></li>
+        <li class="item"><a class="link" 	id="sobre"	href="./sobre.php">Sobre</a></li>
+        <li class="item"><a class="link"	id="login"	href="./login.php">Login</a></li>
+        <li class="item"><a class="link" 	id="reg"	href="./registro.php">Cadastre-se</a></li>
         
     </ul>
     </div>
@@ -37,7 +37,7 @@
 <div id="homepage">
         <div id="heroimg">
             <div id="herotxt">
-                <div class="iconetv"><i class="bi bi-tv iconetv"></i></div>
+                <img id="iconetv" src="../images/tv.png">
                 <p>Aulas e Palestras</p>
             </div>
         </div>
@@ -46,12 +46,21 @@
                 <h1>Como funciona a transmissão</h1>
                 <h1>ao vivo de eventos online</h1>
             
-                <h2>O que fazemos</h2> 
-                <p>O Next Level é uma plataforma online, que busca conectar estudantes de nível técnico e superior aos congressos,
-                palestras, eventos, feiras tecnológicas e acadêmicas. O Next Level vem para te conectar ao mundo profissional,
-                trazendo os mais importantes eventos acadêmicos e profissionais.
+                <p>Em 2020 seis estudantes da Athon resolveram criar uma plataforma que pudesse facilitar os estudos,
+                 e com a falta de  uma plataforma online de estudos de qualidade, em que pudessem além de 
+                 acompanhar ao vivo também fosse possivel ver palestras que já aconteceram e que fossem oportunas 
+                 ver também em outros momentos, dado a necessidade também do ensino remoto emergencial nasceu a 
+                 plataforma NextLevel, que é uma excelente alternativa, principalmente para os eventos de curta 
+                 duração, que desejam reduzir custos envolvidos no processo de organização, como o de aluguel de espaço 
+                 e de equipamentos.  Além de que fazer uma transmissão ao vivo, hoje em dia é uma das formar mais eficazes 
+                 de aumentar a reputação e alcance de uma marca dentro do mercado. Também conhecida como live, a 
+                 transmissão de vídeos ao vivo é muito utilizada em canais como o Youtube, Instagram e Facebook. Nós 
+                 estamos adaptando esse modelo de plataforma para que possamos além de transmitir ao vivo palestras e aulas,
+                  também possamos salvá-las em nosso banco de dados para que outros alunos possam assistir essas palestras 
+                  em outro momento também, sempre que possível e aonde estiver. Com design arrojado e de fácil usabilidade, 
+                  a plataforma NextLevel promete em alguns anos ser a principal plataforma de estudos online no Brasil.
                 </p>
-                 
+                 <br>
                 <h2>Missão</h2> 
                 <p>Acreditamos que a informação e o conhecimento devem ser: rápidos, claros e principalmente acessíveis a todos,
                 com isso, nossa missão é criar uma ferramenta prática que possibilite a interação entre as pessoas, universidades
@@ -59,7 +68,7 @@
                 completo das informações dos eventos, otimizando e trabalhando informações de maneira customizada, afim de
                 proporcionar maior força estratégica para nossos clientes.
                 </p> 
-                
+                <br>
                 <h2>Visão</h2> 
                 <p>
                 O Next Level deseja, tornar-se a maior plataforma de divulgação e gerenciamento de eventos acadêmicos e
@@ -79,7 +88,7 @@
                     multiplicação do conhecimento, que serão incentivados pelo Next Level.
                     </li>
                 </ul> 
-
+                <br>
                 <h2>Valores</h2> 
                 <ul>
                     <li>Ética e Transparência</li>
@@ -90,7 +99,7 @@
                     <li>Praticidade</li> 
                     <li>Criatividade</li>
                 </ul> 
-                
+                <br>
                 <h2>Nossa História</h2> 
                 <p>
                 Criado e desenvolvido inicialmente por dois graduandos do curso de Engenharia de Produção em uma instituição da

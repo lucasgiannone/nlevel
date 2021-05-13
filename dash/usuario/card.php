@@ -6,6 +6,7 @@ $sql = "SELECT
     LEFT JOIN `conteudo` cc ON
         cc.id_conteudo = c.id_conteudo
     WHERE c.id_usuario = {$_SESSION['id_usuario']}
+    ORDER BY dtcadastro DESC
 ";
 
 $query = mysqli_query($conn,$sql);

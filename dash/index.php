@@ -18,7 +18,7 @@
 <!-- HEAD -->
 <html lang="en"> 
     <head>
-        <title>Aluno - Home</title>
+        <title>Dashboard</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Dependencias -->
@@ -77,7 +77,7 @@
         echo "
         <script>
             alert('Acesso não permitido!');
-            window.location='../pages/login';
+            window.location='../pages/login.php';
         </script>";
         session_destroy();
     }

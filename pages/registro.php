@@ -66,9 +66,9 @@
     <!-- Botões da Navbar -->
     <ul class="buttons">
         <li class="item"><a class="link"	id="home" 	href="../">Home</a></li>
-        <li class="item"><a class="link" 	id="sobre"	href="./sobre">Sobre</a></li>
-        <li class="item"><a class="link"	id="login"	href="./login">Login</a></li>
-        <li class="item"><a class="link" 	id="reg"	href="./registro">Cadastre-se</a></li>
+        <li class="item"><a class="link" 	id="sobre"	href="./sobre.php">Sobre</a></li>
+        <li class="item"><a class="link"	id="login"	href="./login.php">Login</a></li>
+        <li class="item"><a class="link" 	id="reg"	href="./registro.php">Cadastre-se</a></li>
         
     </ul>
     </div>
@@ -158,7 +158,8 @@
                 if ($senha == $senhav)
 				{                
                     //conecta no banco Luiz Renan
-                    $u->conectar("next_level","localhost","root","");
+                    $u->conectar("u871029417_athon","92.249.44.207","u871029417_athon","Vitor@123");
+        			/*$u->conectar("next_level","localhost","root",""); */
                     if ($u->msgErro == "")
 					{                        
                         if($u->cadastrar($nome, $telefone, $dt_nasc, $estado, $cidade, $perfil, $genero, $email, $senha))

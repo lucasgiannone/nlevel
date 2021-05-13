@@ -25,10 +25,10 @@
 	<a id="logo"><img class="logo"src="images/athonLogo.svg"></a>
 	<!-- Botões da Navbar -->
 	<ul class="buttons">
-		<li class="item"><a class="link"	id="home" 	href="#">Home</a></li>
-		<li class="item"><a class="link" 	id="sobre"	href="#">Sobre</a></li>
-		<li class="item"><a class="link"	id="login"	href="#">Login</a></li>
-		<li class="item"><a class="link" 	id="reg"	href="#">Cadastre-se</a></li>
+		<li class="item"><a class="link"	id="home" 	href="./">Home</a></li>
+		<li class="item"><a class="link" 	id="sobre"	href="./pages/sobre.php">Sobre</a></li>
+		<li class="item"><a class="link"	id="login"	href="./pages/login.php">Login</a></li>
+		<li class="item"><a class="link" 	id="reg"	href="./pages/registro.php">Cadastre-se</a></li>
 		
 	</ul>
 	</div>
