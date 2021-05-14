@@ -37,6 +37,35 @@
                 Bem vindo ao portal, <?php echo splitName($_SESSION['nome']);
                 ?>!
             </h1>
+                <br>
+            <?php 
+                if($_SESSION['perfil'] == 1 || $_SESSION['perfil'] == 0){
+            ?>
+
+                <h2 class="page-title">
+                 Clique em conteúdo para começar a navegar, <?php echo splitName($_SESSION['nome']);
+                    ?>!
+                </h2>
+            
+            <?php 
+                } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 0){
+            ?>
+
+                <h2 class="page-title">
+                    Clique em novo conteúdo para criar um evento, <?php echo splitName($_SESSION['nome']);
+                    ?>!
+                </h2>
+                    
+            <?php 
+                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 0){
+            ?>
+                <h2 class="page-title">
+                    
+                </h2>
+
+            <?php
+            }
+            ?>
         </div>
     </div>
 </div>
