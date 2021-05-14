@@ -24,6 +24,7 @@ require_once "./components/nav.php"
             <div id="herotxt">
                 <h1>NEXT LEVEL</h1>
                 <p>Aulas e Palestras</p>
+                <br>
                 <a href="./sobre.php"><button id="herobtn">Saber mais</button></a>
             </div>
         </div>
@@ -45,8 +46,6 @@ require_once "./components/nav.php"
                    <p>Nossas palestras e eventos podem ajudar na sua carreira estudantil também.</p>
                 </div>
             </div>
-        </div>
-        <div class="text" >
         </div>
     </div>
 	<footer>
