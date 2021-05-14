@@ -9,7 +9,7 @@
         echo "
         <script> 
             alert('Inscrito com sucesso.');
-            window.location='/dash/conteudo/';
+            window.location='./';
         </script>
         ";
     }

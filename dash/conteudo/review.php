@@ -27,20 +27,17 @@
         <!-- App CSS -->  
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
     </head> 
-<!-- Estrutura Conteúdo -->
+<!-- CONTEUDO -->
     <body class="app">
     <?php require '../components/navbar.php';?>
     <div class="app-wrapper">
-        <div class="app-content">
-            <div class="container row mw-100 mx-2">
-                <h1 class="page-title p-4 pb-0">Conteúdo</h1>
-                    <!-- CONTEÚDO -->
-                    <?php
-                    include('./cards.php');
-                    ?>
-            </div>
-        </div>
+    <div class="app-content pt-3 p-md-3 p-lg-4">
+        <?php
+            require_once "./infocard.php"
+        ?>
     </div>
+</div>
+<!-- FIM CONTEUDO -->
 
     <!-- Javascript -->          
     <script src="../assets/plugins/popper.min.js"></script>

@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- DEPENDENCIAS -->
-	<link rel="stylesheet" href="/css/home.css">
+	<link rel="stylesheet" href="./css/index.css">
 	<link rel="icon" href="https://athonedu.com.br/wp-content/uploads/2021/01/favicon.png" sizes="192x192">
 	<script src="/scripts/fontawesome.js" crossorigin="anonymous"></script>
 	<script src="/scripts/jquery.js"></script>
