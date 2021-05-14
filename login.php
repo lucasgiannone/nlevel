@@ -44,7 +44,7 @@ require_once "./components/nav.php"
 <script>
     $("#forgot").click(function(){
         document.title= "Next Level - Recuperar";
-        window.location = './esqueceu.php';
+        window.location = './pages/esqueceu.php';
     });
 </script>
 
