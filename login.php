@@ -33,7 +33,7 @@ require_once "./components/nav.php"
 		<!-- SENHA -->
 		<div class="input-line"></div>		
 		<label for="psw"><b>Senha</b></label>
-		<input type="password" placeholder="Digite a senha" name="psw" required> 
+		<input class="input-psw" type="password" placeholder="Digite a senha" name="psw" required> 
 		<!-- BOTÃO -->
 		<div class="button-wrap">
 	  	<button type="submit">Entrar</button>

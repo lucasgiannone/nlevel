@@ -15,8 +15,6 @@
   max-width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 nav {
@@ -77,11 +75,17 @@ nav .buttons .item .link {
   display: none;
 }
 
-/* Botão para mobile */
+/* Botão para mobile nav*/
 @media (max-width: 1000px) {
+  nav .logo {
+    left: 1%;
+  }
   .checkbtn {
     display: -ms-grid;
     display: grid;
+    right: 10%;
+    margin-top: 12px;
+    font-size: 30px;
   }
   .buttons {
     position: fixed;
@@ -93,10 +97,6 @@ nav .buttons .item .link {
     text-align: center;
     -webkit-transition: all .5s;
     transition: all .5s;
-  }
-  .checkbtn {
-    margin-top: 12px;
-    font-size: 30px;
   }
   nav .buttons .item {
     display: block;
@@ -188,6 +188,23 @@ form > input[type=text], form > input[type=password] {
   outline: none;
 }
 
+/*Conteudo */
+@media screen and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #loginpage {
+    width: 100%;
+    text-align: center;
+  }
+  form > input[type=text], form > input[type=password] {
+    width: 300px;
+  }
+}
+
 /* Footer */
 footer {
   -webkit-box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.2);
@@ -205,6 +222,13 @@ footer {
   font-family: sans-serif;
   font-size: 80%;
   color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .copyright {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Final Footer */
