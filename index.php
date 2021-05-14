@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lag="en" dir="ltr">
+<title id="title">Next Level - Home</title>
 <!-- HEAD -->
 <head>
 	<meta charset="utf-8">
@@ -36,12 +37,12 @@ require_once "./components/nav.php"
                 <div class="box-2">
                     <div class="iconepg"><i class="fas fa-medal medal"></i></div>
                     <h3>Garantia de qualidade.</h3>
-                   <p>Faça o planejamento de sua carreira começando por aqui, cursos profissionalizantes.</p>
+                   <p>Faça o planejamento de sua carreira começando por aqui.</p>
                 </div>
                 <div class="box-3">
                     <div class="iconepg"><i class="fas fa-user-graduate student"></i></div>
                     <h3>Compatíveis com o mercado.</h3>
-                   <p>Nossos cursos podem ajudar na sua carreira estudantil também.</p>
+                   <p>Nossas palestras e eventos podem ajudar na sua carreira estudantil também.</p>
                 </div>
             </div>
         </div>

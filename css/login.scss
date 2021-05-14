@@ -15,8 +15,7 @@ $input-width: 300px;
 	max-width: 100%;
     padding-right: 15px;
     padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
+
 }	
 nav{
 	background: white;
@@ -70,10 +69,20 @@ $interaction: lightgray;
 	display: none;
 
 }
-/* Botão para mobile */
+
+
+
+/* Botão para mobile nav*/
 @media (max-width: 1000px){
+	nav .logo{
+		left:1%;
+	}
+
 	.checkbtn{
 		display: grid;
+		right: 10%;
+		margin-top: 12px;
+		font-size: 30px;
 	}
 	.buttons{
 		position: fixed;
@@ -85,10 +94,7 @@ $interaction: lightgray;
 		text-align: center;
 		transition: all .5s;
 	}
-	.checkbtn{
-		margin-top: 12px;
-		font-size: 30px;
-	}
+
 	nav .buttons .item{
 		display: block;
 		margin: 50px 0;
@@ -109,15 +115,8 @@ $interaction: lightgray;
 
 	}
 }
+
 /* Final Nav */ 
-
-
-
-
-
-
-
-
 
 
 #loginpage{
@@ -146,6 +145,7 @@ form {
   
 form label{
 	  font-size: 20px;
+	  
 	  font-family:Arial, Helvetica, sans-serif
   }
 
@@ -161,6 +161,7 @@ form button {
 	cursor: pointer;
 	height: 40px;
 	width: 200px;
+	max-width: 100%;
   }
 	/* Hover Buttons */
 	form  button:hover {
@@ -169,6 +170,7 @@ form button {
 	form .button-wrap{
 		margin-top: 30px;
 		margin-bottom: 10px;
+		
 	}
 
   /* Inputs */
@@ -182,6 +184,30 @@ form button {
 		background: linear-gradient(#000, #000) center bottom 5px /calc(100% - 10px) 1px no-repeat;;
 		outline: none;
 	}
+
+/*Form */
+@media screen and (max-width:600px){
+
+	form{
+		max-width: 80%;
+	}
+
+	form .logoLogin{
+		max-width: 50%;
+	}
+	#loginpage{
+		max-width: 100%;
+		text-align: center;
+
+	}
+	form>input[type=text], form>input[type=password]{
+		padding: 2%;
+		margin: 10;
+		max-width: 80%;
+		text-align: center;
+		
+	}
+}
 
 
 	/* Footer */
@@ -198,5 +224,13 @@ footer{
 	font-size: 80%;
 	color:black;
 }
+
+@media screen and (max-width:600px){
+	.copyright{
+		width: 100%;
+		text-align: center;
+	}
+}
+
 
 /* Final Footer */
