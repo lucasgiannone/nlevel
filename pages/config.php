@@ -42,7 +42,7 @@
 	
 	$(document).ready(function () {
 
-		$.getJSON('http://mendesepereira.neuroteks.com/entrevista/estados_cidades.json', (data) => {
+		$.getJSON('../scripts/estados_cidades.json', (data) => {
 			var options = '';	
 
 			$.each(data, function (key, val) {

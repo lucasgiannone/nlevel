@@ -164,6 +164,7 @@ form button {
   cursor: pointer;
   height: 40px;
   width: 200px;
+  max-width: 100%;
 }
 
 /* Hover Buttons */
@@ -188,20 +189,23 @@ form > input[type=text], form > input[type=password] {
   outline: none;
 }
 
-/*Conteudo */
+/*Form */
 @media screen and (max-width: 600px) {
-  body {
-    width: 100%;
+  form {
+    max-width: 80%;
   }
-}
-
-@media screen and (max-width: 600px) {
+  form .logoLogin {
+    max-width: 50%;
+  }
   #loginpage {
-    width: 100%;
+    max-width: 100%;
     text-align: center;
   }
   form > input[type=text], form > input[type=password] {
-    width: 300px;
+    padding: 2%;
+    margin: 10;
+    max-width: 80%;
+    text-align: center;
   }
 }
 
