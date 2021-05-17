@@ -13,6 +13,7 @@
     $configcidade = $row['cidade'];
     $configgen = $row['genero'];
     $configmail = $row['email'];
+    $configsenha = $row['senha'];
     
     }
     
@@ -122,6 +123,23 @@
                     <div class="row justify-content-between align-items-center">
                         <div class="col-auto">
                             <a href="/pages/config.php" class="button"><strong>Alterar</strong></a>
+                        </div><!--//col-->
+                    </div><!--//row-->
+                </div>
+                <!-- Senha -->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <div class="item-label"><strong>Senha</strong></div>
+                            <div class="item-label">********</div>
+                        </div><!--//col-->
+                    </div><!--//row-->
+                </div>
+                <!-- Alterar senha -->
+                <div class="item border-bottom py-3">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-auto">
+                            <a href="/pages/AlterarSenha.php" class="button"><strong>Alterar senha</strong></a>
                         </div><!--//col-->
                     </div><!--//row-->
                 </div>

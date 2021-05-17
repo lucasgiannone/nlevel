@@ -29,7 +29,7 @@ require_once "./components/nav.php"
 		<!-- EMAIL -->
 		<a id="logoLogin"><img class="logoLogin" src="./images/athonLogo.svg"></a>
 		<label for="uname"><b>E-mail</b></label>
-		<input class="input-login" type="text" placeholder="Digite o seu e-mail" name="uname" required>
+		<input type="text" placeholder="Digite o seu e-mail" name="uname" required>
 		<!-- SENHA -->
 		<div class="input-line"></div>		
 		<label for="psw"><b>Senha</b></label>
@@ -37,8 +37,8 @@ require_once "./components/nav.php"
 		<!-- BOTÃO -->
 		<div class="button-wrap">
 	  	<button type="submit">Entrar</button>
-		<button type="button" id="forgot">Esqueceu a senha?</button>		
-	</div>
+		<button type="button" id="forgot">Esqueceu a senha?</button>
+	    </div>
 	</form>
 </div>
 <script>

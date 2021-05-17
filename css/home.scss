@@ -1,29 +1,35 @@
 $base: #0b0c10;
+
     #heroimg {
-        //background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/hero.jpg");
+        
         background: linear-gradient(90deg, rgba(146,39,143,1) 0%, rgba(239,65,54,1) 35%, rgba(251,176,64,1) 100%);
-        height: 600px;
+        max-width: 100%;
+        height: 500px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         border-bottom: solid #EDEDED 1px;
     }
     #herotxt {
-        padding: 200px;
+        max-width: 100%;
+        padding: 100px;
         text-align: center;
         color: white;
+    }
+    #herotxt p{
+        padding: 20px;
     }
     #homepage button {
         background-color: $base;
         border-radius: 5px;
         color: white;
         padding: 14px 20px;
-        margin: 50px;
         border: none;
         cursor: pointer;
         height: 40px;
         width: 200px;
         outline: none;
+        max-width: 100%;
     }
     #homepage button:hover {
         transition: 0.3s;
@@ -33,13 +39,14 @@ $base: #0b0c10;
         font-size: 40px;
         margin: 10px;
         margin-inline: 10%;
-        width: 80%;
+        max-width: 100%;
         word-wrap:break-word;
         
     }
     
     #homepage-2{
         box-shadow: 0px -20px 20px rgba($color: black, $alpha: 0.3);
+    max-width: 100%;
     }
 
 
@@ -51,26 +58,23 @@ $base: #0b0c10;
     position: flex;
     width: 80%;  
 }
-.box-1
+@media screen and (max-width: 600px) {
+    .boxes{
+        display: inline;
+        
+    }
+    .box-1, .box-2, .box-3{
+        padding: 10px;
+    }
+    
+}
+.box-1, .box-2, .box-3
 {   
     width: 16rem;
     height: 16rem;
     color: $base;
 }
 
-.box-2
-{   
-    width: 16rem;
-    height: 16rem;
-    color: $base;
-}
-
-.box-3
-{   
-    width: 16rem;
-    height: 16rem;
-    color: $base;
-}
 
 .iconepg
 {
@@ -81,6 +85,7 @@ $base: #0b0c10;
     top: 0;
     margin-left: 3rem;
     color: $base;   
+    max-width: 100%;
 }
 .box-1 h3
 {

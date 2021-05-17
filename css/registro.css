@@ -141,18 +141,14 @@ footer {
 }
 
 /* Final Footer */
+#registroh2 {
+  color: black;
+  text-align: center;
+}
+
 .reg-wrap {
   background: -webkit-gradient(linear, left top, right top, from(#92278f), color-stop(35%, #ef4136), to(#fbb040));
   background: linear-gradient(90deg, #92278f 0%, #ef4136 35%, #fbb040 100%);
-}
-
-#registroh2 {
-  color: black;
-  margin-inline: 200px;
-  margin-block: 20px;
-}
-
-.reg-wrap {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -167,8 +163,14 @@ form {
   background-color: white;
   padding: 1vw;
   margin: auto;
-  margin-block: 20px;
   border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    text-align: center;
+  }
 }
 
 form > label {
@@ -176,31 +178,30 @@ form > label {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   margin: 10px;
+  max-width: 80%;
 }
 
 /* Inputs */
-input[type=email], input[type=password], input[type=text], input[type=tel] {
-  display: block;
+input[type=email], input[type=date], input[type=password], input[type=text], input[type=tel] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 600px;
   padding: 1rem;
   margin: 10px;
   border: 1px solid #ccc;
-}
-
-input[type=date] {
-  display: block;
-  width: 600px;
-  padding: 1rem;
-  margin: 10px;
-  border: 1px solid #ccc;
+  max-width: 80%;
 }
 
 form select {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 635px;
   padding: 1rem;
   margin: 10px;
   border: 1px solid #ccc;
+  max-width: 90%;
 }
 
 button[type=submit] {
@@ -213,7 +214,7 @@ button[type=submit] {
   cursor: pointer;
   height: 40px;
   width: 200px;
-  margin-inline: 200px;
+  max-width: 100%;
 }
 
 button:hover {

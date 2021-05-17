@@ -58,10 +58,11 @@
 require_once "./components/nav.php"
 ?>
 <!-- FORM -->
-<div class="reg-wrap">
-	<form method="post">
+	<div class="reg-wrap">
+		<form method="post">
 			<h2 id="registroh2">Registro de Usuário:</h2>	
 			<!-- NOME -->
+			<br>
 			<label for="uname">Nome</label>
 			<input type="text" placeholder="Digite o seu nome" name="uname" required>
 			<p class="alert">Atenção:  escreva seu nome completo respeitando as letras iniciais maiúsculas, pois é assim que será impresso em seu certificado.</p>
@@ -118,26 +119,26 @@ require_once "./components/nav.php"
 			<!-- Botão Registrar -->
 			<br>
 			<button type="submit">Registrar-se</button>
+		</form>
+
+
 	</div>
-	</div>
-	</form>
-</div>
 	<footer>
 		<address class="copyright">Copyright NextLevelCO 2021.</address>
 	</footer>
-<?php
-    if (isset($_REQUEST['uname']))
-	{
-        $nome = addslashes($_REQUEST['uname']);
-        $telefone = addslashes($_REQUEST['telefone']);
-        $dt_nasc = addslashes($_REQUEST['dtnasc']);
-        $estado = addslashes($_REQUEST['estado']);
-        $cidade = addslashes($_REQUEST['cidade']);
-        $perfil = addslashes($_REQUEST['tipo']);
-        $genero = addslashes($_REQUEST['genero']);
-        $email = addslashes($_REQUEST['email']);
-        $senha = addslashes($_REQUEST['psw']);
-        $senhav = addslashes($_REQUEST['pswv']);
+	<?php
+    	if (isset($_REQUEST['uname']))
+		{
+        	$nome = addslashes($_REQUEST['uname']);
+    		$telefone = addslashes($_REQUEST['telefone']);
+        	$dt_nasc = addslashes($_REQUEST['dtnasc']);
+        	$estado = addslashes($_REQUEST['estado']);
+        	$cidade = addslashes($_REQUEST['cidade']);
+        	$perfil = addslashes($_REQUEST['tipo']);
+        	$genero = addslashes($_REQUEST['genero']);
+        	$email = addslashes($_REQUEST['email']);
+        	$senha = addslashes($_REQUEST['psw']);
+        	$senhav = addslashes($_REQUEST['pswv']);
 	
                 if ($senha == $senhav)
 				{                
@@ -174,9 +175,9 @@ require_once "./components/nav.php"
 					";
 				}
 				 
-	}	
+		}	
 		 
-?>
+	?>
 
 
 
