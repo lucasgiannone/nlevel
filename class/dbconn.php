@@ -16,10 +16,10 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-function cadastrarConteudo($conn, $nome_imagem, $titulo, $descricao, $data, $link){
+function cadastrarConteudo($conn, $nome_imagem, $titulo, $descricao, $data, $link, $palestrante, $nome_imgpal){
 
-  $sql = "INSERT INTO `conteudo` (`imagem`, `titulo`, `descricao`, `data`, `url`)
-          VALUES ('$nome_imagem', '$titulo', '$descricao', '$data', '$link')";
+  $sql = "INSERT INTO `conteudo` (`imagem`, `titulo`, `descricao`, `data`, `url`, `palestrante`, `img_palestrante`)
+          VALUES ('$nome_imagem', '$titulo', '$descricao', '$data', '$link', '$palestrante', '$nome_imgpal')";
           
   return mysqli_query($conn, $sql);
 }

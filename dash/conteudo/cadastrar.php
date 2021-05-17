@@ -77,7 +77,15 @@
                             <tr>
                                 <td><label for="img">Imagem</label></td>
                                 <td><input name="img" type="file" required></td>           
-                                </tr>
+                            </tr>
+                            <tr>
+                                <td><label for="nmpal">Nome do Palestrante</label></td>
+                                <td><input name="nmpal" type="text" required></td>        
+                            </tr>
+                            <tr>
+                                <td><label for="imgpal">Imagem Palestrante</label></td>
+                                <td><input name="imgpal" type="file" required></td>           
+                            </tr>
                         </table>
                         <button class="btn" >Confirmar</button>
                         </div>
@@ -104,6 +112,7 @@
         
         $titulo = addslashes($_REQUEST['titulo']);
         $descricao = addslashes($_REQUEST['descricao']);
+        $palestrante = addslashes($_REQUEST['nmpal']);
         $link = addslashes($_REQUEST['link']);
         $link = str_replace("https://www.youtube.com/watch?v=","",$link);
 
@@ -126,17 +135,30 @@
         $_FILES['error'][3] = 'Upload do img foi feito parcialmente';
         $_FILES['error'][4] = 'Não foi efetuado o upload do img';
 
-        $extensao = @strtolower(end(explode('.', $_FILES['img']['name'])));
+        $extensao[0] = @strtolower(end(explode('.', $_FILES['img']['name'])));
+        $extensao[1] = @strtolower(end(explode('.', $_FILES['imgpal']['name'])));
 
         //Verifica se houve erro
         if ($_FILES['img']['error'] != 0){
             die("Não foi possível efetuar o upload, erro: <br />".$_UP['error'][$_FILES['img']['erro']]);
             exit;
         }
+        else if ($_FILES['imgpal']['error'] != 0){
+            die("Não foi possível efetuar o upload, erro: <br />".$_UP['error'][$_FILES['imgpal']['erro']]);
+            exit;
+        }
 
         //VERIFICAR A EXTENSÃO
         
-        else if (!array_search($extensao, $type)){                 
+        else if (!array_search($extensao[0], $type)){                 
+            echo "
+                <script>
+                    alert(\"Extensão inválida\");
+                </script>
+            ";
+            die();
+        }
+        else if (!array_search($extensao[1], $type)){                 
             echo "
                 <script>
                     alert(\"Extensão inválida\");
@@ -154,14 +176,24 @@
             ";
             die();
         }
+        else if ($_UP['tamanho'] < $_FILES['imgpal']['size']){
+            echo "
+                <script>
+                    alert(\"Tamanho inválido\");
+                </script>
+            ";
+            die();
+        }
         /**FIM TRATAMENTO IMAGEM */
 
-        else if (!empty($titulo) && !empty($descricao) && !empty($link) && !empty($data)){
+        else if (!empty($titulo) && !empty($descricao) && !empty($link) && !empty($data && !empty($palestrante))){
 
             $nome_imagem = verificaNomeImagem($conn, $_FILES['img']['name']);
+            $nome_imgpal = verificaNomeImagem($conn, $_FILES['imgpal']['name']);
 
-            if (cadastrarConteudo($conn, $nome_imagem, $titulo, $descricao, $data, $link)){
+            if (cadastrarConteudo($conn, $nome_imagem, $titulo, $descricao, $data, $link, $palestrante, $nome_imgpal)){
                 move_uploaded_file($_FILES['img']['tmp_name'], $_UP['pasta']. $nome_imagem);
+                move_uploaded_file($_FILES['imgpal']['tmp_name'], $_UP['pasta']. $nome_imgpal);
                 echo "
                 <script>
                     alert(\"Contéudo criado com sucesso\");
