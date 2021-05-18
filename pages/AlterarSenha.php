@@ -2,11 +2,6 @@
     require_once '../class/usuarios.php';
     session_start();
 	include('../class/dbconn.php');
-    $SelectQuery = $query="select * from usuarios WHERE id_usuario=" . '' . $_SESSION['id_usuario'];
-    $ExecuteQuery = mysqli_query($conn,$SelectQuery);
-    while($row = mysqli_fetch_array($ExecuteQuery)){
-    $configsenha = $row['senha'];
-    }
 
     if(!isset($_SESSION['perfil'])){
         echo "
@@ -47,16 +42,16 @@
 			<h2 id="registroh2">Alterar Senha:</h2>	
 			<!-- CONFIRMAR SENHA -->
 			<br>
-			<label for="pswv">Digite a Senha</label>
+			<label for="pswv">Digite a Senha atual</label>
 			<input type="password" placeholder="Digite a sua senha atual" name="pswv" required> 
 			<!-- CONFIRMAR SENHA -->			
 			<br>
-			<label for="pswv">Nova Senha</label>
-			<input type="password" placeholder="Digite a sua sua senha nova" name="pswv" required> 
+			<label for="npsw">Nova Senha</label>
+			<input type="password" placeholder="Digite a sua sua senha nova" name="npsw" required> 
 			<!-- CONFIRMAR SENHA -->			
 			<br>
-			<label for="pswv">Confirmar Nova Senha</label>
-			<input type="password" placeholder="Confirme a sua senha nova" name="pswv" required> 
+			<label for="npswv">Confirmar Nova Senha</label>
+			<input type="password" placeholder="Confirme a sua senha nova" name="npswv" required> 
 			<!-- BOTÃO -->
 			<br>
 			<button type="submit">Alterar</button>
@@ -70,3 +65,46 @@
 	</footer>
 </body>
 </html>
+<?php
+$SelectQuery = "SELECT * FROM usuarios WHERE id_usuario=" . '' . $_SESSION['id_usuario'];
+$ExecuteQuery = mysqli_query($conn,$SelectQuery);
+while($row = mysqli_fetch_array($ExecuteQuery)){
+$configsenha = $row['senha'];
+}
+
+if(isset($_REQUEST['pswv'])){
+	$id = addslashes($_SESSION['id_usuario']);
+	$pswv = addslashes(md5($_REQUEST['pswv']));
+	$npsw = addslashes(md5($_REQUEST['npsw']));
+
+	if($configsenha == $pswv){
+
+		if($_REQUEST['npsw'] == $_REQUEST['npswv']){
+		$update = "UPDATE usuarios SET senha = '$npsw' WHERE id_usuario = $id";
+			if(mysqli_query($conn, $update)){
+				echo 
+				"<script>
+				alert('Senha alterada.');
+				window.location='/login.php'
+				</script>";
+				session_destroy();
+			} else {
+				echo 
+				"<script>
+				alert('Erro ao alterar.');
+				</script>";
+			}
+		} else{
+			echo 
+			"<script>
+			alert('Senhas não conferem.');
+			</script>";
+		}
+	} else {
+		echo 
+			"<script>
+			alert('Senha atual não confere.');
+			</script>";
+	}
+}
+?>
