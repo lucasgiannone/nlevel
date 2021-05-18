@@ -45,7 +45,7 @@
         } else {
             echo "
                 <script>
-                    alert('Não foi possível, já existe um registro para troca de senha');
+                    alert('Não encontrado esse email');
                 </script>
             ";
         }
