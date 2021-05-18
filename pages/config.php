@@ -32,6 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Level - Alterar</title>
 	<link rel="icon" href="https://athonedu.com.br/wp-content/uploads/2021/01/favicon.png" sizes="192x192">
+
 	<link rel="stylesheet" href="../css/altsenha.css">
 	<script src="../scripts/fontawesome.js" crossorigin="anonymous"></script>
 	<script src="../scripts/jquery.js"></script>
@@ -141,7 +142,7 @@
 			<!-- E-MAIL -->
 			<br>
 			<label for="email">E-mail</label>
-			<input type="email" placeholder="Digite o seu e-mail" name="email" value="<?= $configmail ?>" required>
+			<input type="email" placeholder="Digite o seu e-mail" name="email" disabled value="<?= $configmail ?>" required>
 			<!-- CONFIRMAR SENHA -->
 			<br>
 			<label for="pswv">Confirmar Senha</label>
