@@ -144,7 +144,6 @@ footer {
 #registroh2 {
   color: black;
   text-align: center;
-  padding: 10px;
 }
 
 .reg-wrap {
@@ -157,9 +156,6 @@ footer {
   display: -ms-flexbox;
   display: flex;
   height: calc(100% - (70px + 70px));
-  text-align: center;
-  padding-top: 60px;
-  padding-bottom: 60px;
 }
 
 /*----------Login Form----------*/
