@@ -138,6 +138,7 @@ $buttons: #0b0c10;
 #registroh2{
 	color: black;
 	text-align: center;
+	padding: 10px;
 }
 
 .reg-wrap{
@@ -145,6 +146,9 @@ $buttons: #0b0c10;
 	align-items:center;
 	display:flex;
 	height:calc(100% - (70px + 70px));
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 
 	/*----------Login Form----------*/

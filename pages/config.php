@@ -88,9 +88,7 @@
 </head>
 <body>
 <nav>
-    <div id="container">
-    <!-- Logo -->
-    <a id="logo"><img class="logo"src="../images/athonLogo.svg"></a>
+<?php require_once "../components/navPortal.php"?>
 </nav>
 <!-- FORM -->
 <div class="reg-wrap">

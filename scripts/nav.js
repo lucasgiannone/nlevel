@@ -7,6 +7,7 @@
 			document.title= 'Next Level - Home';
 			window.location = '../';
 		});
+		
 		$("#home").click(function(){
 			document.title= 'Next Level - Home';
 			window.location = './';
