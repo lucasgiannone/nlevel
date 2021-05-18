@@ -13,7 +13,7 @@
 <!-- DIV PARA O CSS -->
 <div id="loginpage">
 	<!-- FORM DE LOGIN -->
-	<form action="action_page.php" method="post">
+	<form action="../PHPMailer/index.php" method="post">
 		<!-- EMAIL -->
 		<a id="logoLogin"><img class="logoLogin"src="images/athonLogo.svg"></a>
 		<label for="uname"><b>E-mail</b></label>
