@@ -1,7 +1,6 @@
 <?php
 include('../../class/dbconn.php');
 
-
 $id = $_REQUEST['id_conteudo'];
 $sql = "SELECT * FROM `conteudo` WHERE id_conteudo = $id";
 
@@ -10,6 +9,9 @@ $query = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_array($query)){
     $row["img"] = '../assets/images/conteudo/'. '' . $row['imagem'];
     $row["imgpal"] = '../assets/images/conteudo/'. '' . $row['img_palestrante'];
+    $mes_ref = DateTime::createFromFormat('Y-m-d H:i:s', $row['data']);
+    $mes_ref = $mes_ref->format('d/m/Y H:i');
+
 ?>
 <style>
 .img-pal{
@@ -59,17 +61,18 @@ while($row = mysqli_fetch_array($query)){
         <div class="item">
             <div class="row border-top">
                 <div class="d-inline">
-                    <a><?=$row['data']?></a>
+                    <a><?=$mes_ref?></a>
                     <?php
                         $sqlinscrito = "SELECT * FROM conteudoaluno WHERE id_usuario = {$_SESSION['id_usuario']} AND id_conteudo = {$row['id_conteudo']}";
                         $queryinscrito = mysqli_query($conn, $sqlinscrito);
                     if (mysqli_num_rows($queryinscrito) == 0){   
                     ?>
-                    <a style="float:right;" href="../../class/conteudo.php?id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Se Inscrever</strong></a>
+                    <a style="float:right;" href="../../class/conteudo.php?btn=1&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Se Inscrever</strong></a>
                     <?php 
-                    } else {
+                    } else{
                     ?>
                     <a style="float:right;" href="/dash/conteudo/player.php?url=<?=$row['url']?>&titulo=<?=$row['titulo']?>" class="btn"><strong>Assistir</strong></a>
+                    <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
                     <?php 
                     }
                     ?>

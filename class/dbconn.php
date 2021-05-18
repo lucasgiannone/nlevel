@@ -33,6 +33,17 @@ function registroconteudo($conn, $conteudo, $userid){
   $sql = "INSERT into conteudoaluno (id_conteudo, id_usuario) VALUES ($conteudo, $userid)";
   return mysqli_query($conn, $sql);
 }
+
+
+function desregistroconteudo($conn, $conteudo, $userid){
+  $sql = "DELETE FROM conteudoaluno WHERE id_usuario = $userid AND id_conteudo = $conteudo";
+  if (mysqli_query($conn, $sql)){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
     
 
 

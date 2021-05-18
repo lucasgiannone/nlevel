@@ -1,0 +1,232 @@
+@charset "UTF-8";
+/* Top Navigation */
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100%;
+}
+
+#container {
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+nav {
+  background: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 55px;
+  width: 100%;
+  border-bottom: solid #EDEDED 1px;
+  -webkit-box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav .logo {
+  position: absolute;
+  height: 40px;
+  margin: 8px;
+  cursor: pointer;
+}
+
+nav .buttons {
+  float: right;
+}
+
+nav .buttons .item {
+  display: inline-block;
+  line-height: 55px;
+  margin: 0 5px;
+}
+
+nav .buttons .item .link {
+  color: black;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.link:hover {
+  background: lightgray;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: black;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Botão para mobile */
+@media (max-width: 1000px) {
+  .checkbtn {
+    display: -ms-grid;
+    display: grid;
+  }
+  .buttons {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 55px;
+    right: -100%;
+    text-align: center;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+  }
+  .checkbtn {
+    margin-top: 12px;
+    font-size: 30px;
+  }
+  nav .buttons .item {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav .buttons .item .link {
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 20px;
+  }
+  .link:hover {
+    background: none;
+  }
+  #check:checked ~ .buttons {
+    right: 0;
+  }
+}
+
+/* Final Nav */
+/* Footer */
+footer {
+  -webkit-box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.2);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  line-height: 40px;
+  min-width: 100%;
+  height: 40px;
+  background-color: #EDEDED;
+}
+
+.copyright {
+  font-family: sans-serif;
+  font-size: 80%;
+  color: black;
+}
+
+/* Final Footer */
+#registroh2 {
+  color: black;
+  text-align: center;
+}
+
+.reg-wrap {
+  background: -webkit-gradient(linear, left top, right top, from(#92278f), color-stop(35%, #ef4136), to(#fbb040));
+  background: linear-gradient(90deg, #92278f 0%, #ef4136 35%, #fbb040 100%);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - (70px + 70px));
+}
+
+/*----------Login Form----------*/
+form {
+  background-color: white;
+  padding: 1vw;
+  margin: auto;
+  border: 1px solid #ccc;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  form {
+    text-align: center;
+  }
+}
+
+form > label {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin: 10px;
+  max-width: 80%;
+}
+
+/* Inputs */
+input[type=email], input[type=date], input[type=password], input[type=text], input[type=tel] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  padding: 1rem;
+  margin: 10px;
+  border: 1px solid #ccc;
+  max-width: 80%;
+}
+
+form select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 635px;
+  padding: 1rem;
+  margin: 10px;
+  border: 1px solid #ccc;
+  max-width: 90%;
+}
+
+button[type=submit] {
+  display: inline;
+  background-color: #0b0c10;
+  border-radius: 5px;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  height: 40px;
+  width: 200px;
+  max-width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.alert {
+  color: red;
+  font-size: 10px;
+}
+
+#gen > label, #gen > input {
+  margin-inline: 10px;
+}
+/*# sourceMappingURL=altsenha.css.map */

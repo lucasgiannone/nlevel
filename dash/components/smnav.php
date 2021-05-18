@@ -5,7 +5,7 @@
     <div class="row justify-content-between align-items-center">
     <!-- Botão Menu Mobile -->
         <div class="col-auto">
-        <a href="./">Voltar</a>
+        <a href="/dash/">Voltar</a>
         </div>
     <!-- // -->
     <!-- Botões TopNav Direita -->
