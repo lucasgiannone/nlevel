@@ -23,12 +23,10 @@ require_once "./components/nav.php"
             <img id="iconetv" src="../images/tv.png"></img>
                     <h1>Next Level</h1>
                     <p>Trabalhando de uma forma nunca vista no mercado.</p>
+
         </div>
 </div>
 <div id="sobrepage">
-
-    <h1>Como funciona a transmissão</h1>
-    <h1>ao vivo de eventos online</h1>
 
     <h2>Sobre nós</h2> 
         <p>

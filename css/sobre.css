@@ -11,6 +11,7 @@
   background-position: center;
   background-size: cover;
   text-align: center;
+  padding-bottom: 15px;
 }
 
 #iconetv {
@@ -21,16 +22,14 @@
 }
 
 #heroimg > p {
-  padding: 1%;
   text-align: center;
   color: white;
   display: inline;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#herotxt {
-  padding: 200px;
-  text-align: center;
-  color: white;
+#heroimg > h1 {
+  padding-bottom: 10px;
 }
 
 #sobrepage {
