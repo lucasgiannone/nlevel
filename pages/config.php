@@ -12,7 +12,6 @@
     $configcidade = $row['cidade'];
     $configgen = $row['genero'];
     $configmail = $row['email'];
-	$configsenha = "";
     }
 
     if(!isset($_SESSION['perfil'])){
@@ -158,5 +157,51 @@
 	<footer>
 		<address class="copyright">Copyright NextLevelCO 2021.</address>
 	</footer>
+
+
 </body>
 </html>
+<?php
+$SelectQuery = "SELECT * FROM usuarios WHERE id_usuario=" . '' . $_SESSION['id_usuario'];
+$ExecuteQuery = mysqli_query($conn,$SelectQuery);
+while($row = mysqli_fetch_array($ExecuteQuery)){
+$configsenha = $row['senha'];
+}
+
+if(isset($_REQUEST['pswv'])){
+	$id = addslashes($_SESSION['id_usuario']);
+	$pswv = addslashes(md5($_REQUEST['pswv']));
+	$uname = addslashes($_REQUEST['uname']);
+	$telefone = addslashes($_REQUEST['telefone']);
+	$dt_nasc = addslashes($_REQUEST['dtnasc']);
+	$estado = addslashes($_REQUEST['estado']);
+	$cidade = addslashes($_REQUEST['cidade']);
+	$genero = addslashes($_REQUEST['genero']);
+
+	if($configsenha == $pswv){
+
+		if (isset($_REQUEST['pswv'])){
+		$update = "UPDATE usuarios SET nome = '$uname', telefone = '$telefone', dt_nasc = '$dt_nasc', estado = '$estado', cidade = '$cidade', genero = '$genero' WHERE id_usuario = $id";
+				if(mysqli_query($conn, $update)){
+					echo 
+					"<script>
+					alert('Dados Alterados.');
+					window.location='../dash/perfil.php'
+					</script>";
+				} else {
+					echo 
+					"<script>
+					alert('Erro ao alterar.');
+					</script>";
+				}
+			}
+		}
+		 else {
+			echo 
+				"<script>
+				alert('Senha atual não confere.');
+				</script>";
+	
+}
+}
+?>
