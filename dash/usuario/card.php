@@ -25,7 +25,7 @@ while($row = mysqli_fetch_array($query)){
         </div><!-- CARD BODY -->
         <div class="app-card-footer row p-4 mt-auto">
             <a class="btn app-btn-secondary w-50" href="/dash/conteudo/review.php?id_conteudo=<?=$row['id_conteudo']?>">Ver mais</a>
-            <a class="btn app-btn-secondary w-50" href="/dash/conteudo/player.php?url=<?=$row['url']?>&titulo=<?=$row['titulo']?>">Assistir</a>
+            <a class="btn app-btn-secondary w-50" href="/dash/conteudo/player.php?id_conteudo=<?=$row['id_conteudo']?>">Assistir</a>
         </div><!-- CARD FOOTER -->
     </div>
 </div>
