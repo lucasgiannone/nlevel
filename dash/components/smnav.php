@@ -4,12 +4,12 @@
     <div class="header-content"> 
     <div class="row justify-content-between align-items-center">
     <!-- Botão Menu Mobile -->
-        <div class="col-auto">
+        <div class="col-auto ml-3">
         <a href="/dash/">Voltar</a>
         </div>
     <!-- // -->
     <!-- Botões TopNav Direita -->
-    <div class="app-utilities col-auto">
+    <div class="app-utilities col-auto mr-3 mr-4 mr-lg-4">
         <!-- Botão de Usuário -->
         <div class="app-utility-item app-user-dropdown dropdown">
             <a id="user-dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">

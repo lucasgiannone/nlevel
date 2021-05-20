@@ -1,10 +1,3 @@
-<?php
-
-    $utoggle[0] = "false";
-    $utoggle[1] = "";
-
-?>
-
 <nav class="app-header fixed-top">	   	            
     <div class="app-header-inner">  
     <div class="container-fluid py-2">
@@ -92,7 +85,7 @@
 
                 <!-- CAMPO DO ALUNO -->
                 <li class=" nav-item has-submenu">
-                    <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-4" aria-expanded="<?=$utoggle[0]?>" aria-controls="submenu-2">
+                    <a class="nav-link submenu-toggle <?=$uconteudo?>" href="#" data-toggle="collapse" data-target="#submenu-4" aria-expanded="<?=$utoggle[0]?>" aria-controls="submenu-2">
                         <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
                         <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
@@ -106,10 +99,10 @@
                         </svg>
                         </span>
                     </a>
-                    <div id="submenu-4" class="collapse <?=$utoggle[1]?> submenu submenu-4" data-parent="#menu-accordion">
+                    <div id="submenu-4" class="submenu submenu-4 <?=$utoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link <?= $uconteudo ?>" href="/dash/usuario/">Seu Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?= $certificados ?>" href="#">Certificados</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?= $ulink[0]?>" href="/dash/usuario/">Seu Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?= $ulink[1]?>" href="#">Certificados</a></li>
                         </ul>
                     </div>
                 </li>
@@ -118,7 +111,7 @@
                 ?>
                 <!-- CAMPO DO PALESTRANTE -->
                 <li class="nav-item has-submenu">
-                    <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-2" aria-expanded="false" aria-controls="submenu-2">
+                    <a class="nav-link submenu-toggle <?=$palestrante?>" href="#" data-toggle="collapse" data-target="#submenu-2" aria-expanded="<?=$paltoggle[0]?>" aria-controls="submenu-2">
                         <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-reels" viewBox="0 0 16 16">
                         <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
@@ -133,10 +126,10 @@
                         </svg>
                         </span>
                     </a>
-                    <div id="submenu-2" class="collapse submenu submenu-2" data-parent="#menu-accordion">
+                    <div id="submenu-2" class="collapse submenu submenu-2 <?=$paltoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link" href="/dash/conteudo/cadastrar.php">Novo Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link" href="#">Programado</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$pallink[0]?>" href="/dash/conteudo/cadastrar.php">Novo Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$pallink[1]?>" href="#">Programado</a></li>
                         </ul>
                     </div>
                 </li>
@@ -145,7 +138,7 @@
                 ?>
                 <!-- CAMPO DO ADMIN -->
                 <li class="nav-item has-submenu">
-                    <a class="nav-link submenu-toggle" href="#" data-toggle="collapse" data-target="#submenu-3" aria-expanded="false" aria-controls="submenu-2">
+                    <a class="nav-link submenu-toggle <?=$administrador?>" href="#" data-toggle="collapse" data-target="#submenu-3" aria-expanded="<?=$admtoggle[0]?>" aria-controls="submenu-2">
                         <span class="nav-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
                         <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
@@ -158,10 +151,10 @@
                         </svg>
                         </span>
                     </a>
-                    <div id="submenu-3" class="collapse submenu submenu-3" data-parent="#menu-accordion">
+                    <div id="submenu-3" class="collapse submenu submenu-3 <?=$admtoggle[1]?>" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link" href="#">Editar Usuários</a></li>
-                            <li class="submenu-item"><a class="submenu-link" href="#">Editar Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[0]?>" href="#">Editar Usuários</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="#">Editar Conteúdo</a></li>
                         </ul>
                     </div>
                 </li>

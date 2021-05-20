@@ -14,7 +14,7 @@ $query = mysqli_query($conn,$sql);
 while($row = mysqli_fetch_array($query)){
     $row["img"] = '../assets/images/conteudo/'. '' . $row['imagem'];
 ?>
-<div class="d-inline-block col-sm-6 col-xl-4 my-3">
+<div class="d-inline-block col-sm-12 col-md-12 col-lg-6 mb-3">
     <div class="app-card align-items-start shadow-sm">
         <img class="card-img-top" src="<?=$row['img']?>" alt="Card image">
         <div class="app-card-header">

@@ -7,12 +7,14 @@
         echo "
         <script>
             alert('Acesso não permitido!');
-            window.location='../../pages/login.php';
+            window.location='../../login.php';
         </script>";
         session_destroy();
     } 
 
-    $uconteudo = "active";
+    $navtogglestate = "active";
+    $uconteudo = $navtogglestate;
+    $ulink[0] = $navtogglestate;
     $utoggle[0] = "true";
     $utoggle[1] = "show";
 ?>
@@ -32,10 +34,10 @@
 <!-- Estrutura Conteúdo -->
     <body class="app">
     <?php require '../components/navbar.php';?>
-    <div class="app-wrapper">
-        <div class="app-content">
-            <div class="container row mw-100 mx-2">
-                <h1 class="page-title p-4 pb-0">Conteúdo</h1>
+    <div class="app-wrapper pl-3 pl-md-5">
+    <div class="app-content pt-3">
+        <div class="container row px-md-5">
+                <h1 class="page-title pb-0">Inscrito:</h1>
                     <!-- CONTEÚDO -->
                     <?php
                     include('./card.php');

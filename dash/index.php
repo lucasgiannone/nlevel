@@ -106,7 +106,7 @@
         echo "
         <script>
             alert('Acesso não permitido!');
-            window.location='../pages/login.php';
+            window.location='../login.php';
         </script>";
         session_destroy();
     }

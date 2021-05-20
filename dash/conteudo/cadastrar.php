@@ -13,6 +13,10 @@
     }
 
     include '../../class/dbconn.php';
+    $palestrante = "active";
+    $pallink[0] = "active";
+    $paltoggle[0] = "true";
+    $paltoggle[1] = "show";
 
 ?>
 <!DOCTYPE html>

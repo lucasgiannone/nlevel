@@ -24,7 +24,7 @@ while($row = mysqli_fetch_array($query)){
     background-size: cover;
 }
 </style>
-<div class="app-card app-card-account shadow-sm d-flex flex-column align-items-start">
+<div class="app-card app-card-account m-2 shadow-sm d-flex flex-column align-items-start">
     <!-- HEADER -->
     <div class="app-card-header w-100 border-bottom">
         <!-- IMAGEM CONTEUDO -->
@@ -39,58 +39,52 @@ while($row = mysqli_fetch_array($query)){
     
     <div class="app-card-body w-100">
         <!-- TITULO CONTEUDO -->
-        <div style="float: left; position: relative;" class="item p-4">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-auto">
-                    <img class="img-pal mb-3" src="<?=$row['imgpal']?>" alt="Imagem Palestrante">
-                    <div class="mx-4 px-4"><?=$row['palestrante']?></div>
-                </div><!--//col-->
-            </div><!--//row-->
+        <div style="float: left; position: relative;" class="item p-3">    
+            <img class="img-pal" src="<?=$row['imgpal']?>" alt="Imagem Palestrante">
+            <div class="text-center mt-2"><?=$row['palestrante']?></div>  
         </div>
         <!-- DESCRICAO CONTEUDO -->
-        <div class="item w-100 my-3">
+        <div class="item mt-3">
             <div class="row justify-content-between align-items-center">
-                <div style="font-size:20px;" class="col-auto w-100">
-                    <div class="item-data">
+                <div style="font-size:20px;" class="col-auto w-100 ">
+                    <div class="item-data border-bottom">
                         <p><?=$row['descricao']?></p>
                     </div>
                 </div><!--//col-->
             </div><!--//row-->
         </div>
         <!-- DATA/ASSISTIR -->
-        <div class="item">
-            <div class="row border-top">
-                <div class="d-inline">
-                    <a><?=$mes_ref?></a>
-                    <?php
-                        $sqlinscrito = "SELECT * FROM conteudoaluno WHERE id_usuario = {$_SESSION['id_usuario']} AND id_conteudo = {$row['id_conteudo']}";
-                        $queryinscrito = mysqli_query($conn, $sqlinscrito);
-                    if (mysqli_num_rows($queryinscrito) == 0){   
-                    ?>
-                    <a style="float:right;" href="../../class/conteudo.php?btn=1&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Se Inscrever</strong></a>
-                    <?php 
-                    } else{
-                    ?>
-                    <a style="float:right;" href="/dash/conteudo/player.php?url=<?=$row['url']?>&titulo=<?=$row['titulo']?>" class="btn"><strong>Assistir</strong></a>
-                    <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
-                    <?php 
-                    }
-                    ?>
+        <div class="app-card-footer w-100">
+                <div class="row">
+                    <div class="col-6">
+                       <p class="mx-2 mt-1 text-muted"><small><?=$mes_ref?></small></p>
+                    </div>
+                <?php
+                    $sqlinscrito = "SELECT * FROM conteudoaluno WHERE id_usuario = {$_SESSION['id_usuario']} AND id_conteudo = {$row['id_conteudo']}";
+                    $queryinscrito = mysqli_query($conn, $sqlinscrito);
+                if (mysqli_num_rows($queryinscrito) == 0){   
+                ?>
+                    <div class="col-6">
+                        <a style="float:right;" href="../../class/conteudo.php?btn=1&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Se Inscrever</strong></a>
+                    </div>
+                <?php 
+                } else{
+                ?>
+                    <div class="col-6">
+                        <a style="float:right;" href="/dash/conteudo/player.php?id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Assistir</strong></a>
+                    </div>
                 </div>
-                <div class="d-inline">
-                    
+                <div class="row">
+                    <div class="col-12">
+                        <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
+                    </div>    
                 </div>
-                </div><!--//col-->
-            </div><!--//row-->
+                <?php 
+                }
+                ?>
+            </div>
         </div>
-
-
-        
-        
-        
-        </div>
-    </div>         
-</div>
+    </div>
 <?php 
 }
 ?>
