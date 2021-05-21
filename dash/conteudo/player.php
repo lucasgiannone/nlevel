@@ -1,6 +1,5 @@
 <?php
 include('../../class/dbconn.php');
-$dominio ='athon.fwsistemas.com';
 $id = $_REQUEST['id_conteudo'];
 $sql = "SELECT * FROM `conteudo` WHERE id_conteudo = $id";
 
@@ -75,8 +74,7 @@ while($row = mysqli_fetch_array($query)){
                             </script>
             </div>
             <div class="col-sm-12 col-md-4 p-0 m-0">
-            <iframe src="https://studio.youtube.com/live_chat?v=<?=$row['url']?>&embed_domain=<?=$dominio?>"></iframe>                    
-            </div>
+            <iframe src="https://studio.youtube.com/live_chat?v=<?=$row['url']?>&embed_domain=<?=$_SERVER['HTTP_HOST']?>"></iframe>            </div>
     </div>
     
     <style>

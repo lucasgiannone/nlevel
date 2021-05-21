@@ -31,8 +31,8 @@
     <body class="app">
     <?php require '../components/navbar.php';?>
     <div class="app-wrapper pl-3 pl-md-5">
-    <div class="app-content pt-3">
-        <div class="container row px-md-5">
+        <div class="app-content pt-3">
+            <div class="container row px-md-5">
                 <h1 class="page-title pb-0">Conteúdo:</h1>
                     <!-- CONTEÚDO -->
                     <?php

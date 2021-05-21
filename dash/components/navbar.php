@@ -154,7 +154,8 @@
                     <div id="submenu-3" class="collapse submenu submenu-3 <?=$admtoggle[1]?>" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[0]?>" href="#">Editar Usuários</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="#">Editar Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/conteudo/certificado.php">Gerar Certificados</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="#">Editar Conteúdo</a></li>
                         </ul>
                     </div>
                 </li>
