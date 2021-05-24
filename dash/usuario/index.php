@@ -38,6 +38,14 @@
     <div class="app-content pt-3">
         <div class="container row px-md-5">
                 <h1 class="page-title pb-0">Inscrito:</h1>
+                <!-- search bar -->
+                <div class="input-group rounded">
+                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon" />
+                        <span class="input-group-text border-0" id="search-addon">
+                        <i class="fas fa-search"></i>
+                        </span>
+                </div>
                     <!-- CONTEÚDO -->
                     <?php
                     include('./card.php');
@@ -55,3 +63,4 @@
     <script src="../assets/js/app.js"></script> 
 </body>
 </html>
+

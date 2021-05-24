@@ -23,7 +23,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <title>Certificate Generator</title>
+        <title>Gerador de Certificado </title>
         <!-- Dependencias -->
         <link rel="shortcut icon" href="../assets/images/icon.svg"> 
         <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
@@ -67,7 +67,7 @@
 
                             <tr>
                                 <td><label for="datetime">Data</label></td>
-                                <td colspan="1"><input name="datetime" id="data" type="date" required></td>
+                                <td colspan="1"><input name="date"  max="9999-12-31" id="data" type="date" required></td>
                             </tr>
 
                         </table>

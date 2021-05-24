@@ -38,35 +38,11 @@
                 ?>!
             </h1>
                 <br>
-            <?php 
-                if($_SESSION['perfil'] == 1 || $_SESSION['perfil'] == 0){
-            ?>
-
-                <h2 class="page-title">
-                 Clique em conteúdo para começar a navegar, <?php echo splitName($_SESSION['nome']);
-                    ?>!
-                </h2>
-            
-            <?php 
-                } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 0){
-            ?>
-
-                <h2 class="page-title">
-                    Clique em novo conteúdo para criar um evento, <?php echo splitName($_SESSION['nome']);
-                    ?>!
-                </h2>
-                    
-            <?php 
-                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 0){
-            ?>
-                <h2 class="page-title">
-                    
-                </h2>
-
-            <?php
-            }
-            ?>
+                <p> É necessario entrar com a conta do youtube para conversar no chat ao vivo com o palestrante </p>
         </div>
+        <a href="https://www.youtube.com/account_advanced?hl=pt-br" target="_blank">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Entrar com a conta do youtube</button>
+        </a>
     </div>
 </div>
 
