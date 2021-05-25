@@ -11,6 +11,8 @@
         session_destroy();
     } 
 
+
+
     $navtogglestate = "active";
     $administrador = $navtogglestate;
     $admlink [0] = $navtogglestate;

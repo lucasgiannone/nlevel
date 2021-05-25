@@ -38,13 +38,13 @@
     <div class="app-content pt-3">
         <div class="container row px-md-5">
                 <h1 class="page-title pb-0">Inscrito:</h1>
-                <!-- search bar -->
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" />
-                        <span class="input-group-text border-0" id="search-addon">
-                        <i class="fas fa-search"></i>
-                        </span>
+                <!-- SEARCH -->
+                <form action="" method="post">
+                <input type="text" name="input" id="input" placeholder="Pesquise o conteúdo">
+                <button type="submit" name="enviar" value="1">
+                <i class="fas fa-search"></i>
+                </button>
+                </form>
                 </div>
                     <!-- CONTEÚDO -->
                     <?php

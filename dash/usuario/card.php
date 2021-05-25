@@ -1,13 +1,32 @@
 <?php
 include('../../class/dbconn.php');
 
-$sql = "SELECT 
-        cc.* FROM `conteudoaluno` c 
-    LEFT JOIN `conteudo` cc ON
-        cc.id_conteudo = c.id_conteudo
-    WHERE c.id_usuario = {$_SESSION['id_usuario']}
-    ORDER BY dtcadastro DESC
+if($_REQUEST['enviar'] == ""){
+    $_REQUEST['enviar'] = 0;
+}
+switch($_REQUEST['enviar']){
+case 0:
+    $sql = "SELECT 
+    cc.* FROM `conteudoaluno` c 
+LEFT JOIN `conteudo` cc ON
+    cc.id_conteudo = c.id_conteudo
+WHERE c.id_usuario = {$_SESSION['id_usuario']}
+ORDER BY dtcadastro DESC
 ";
+break;
+case 1:
+    $sql = "SELECT 
+    cc.* FROM `conteudoaluno` c 
+LEFT JOIN `conteudo` cc ON
+    cc.id_conteudo = c.id_conteudo
+WHERE c.id_usuario = {$_SESSION['id_usuario']} AND titulo LIKE \"%{$_REQUEST['input']}%\ 
+ORDER BY dtcadastro DESC
+";
+
+break;
+}
+
+
 
 $query = mysqli_query($conn,$sql);
 

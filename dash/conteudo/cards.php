@@ -1,7 +1,5 @@
 <?php
-include('../../class/dbconn.php');
-
-$sql = "select * from conteudo order by data desc LIMIT 10";
+include('../../class/dbconn.php'); 
 
 $query = mysqli_query($conn,$sql);
 

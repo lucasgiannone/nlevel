@@ -5,6 +5,9 @@ const dataInput = document.getElementById('data')
 const palestraInput = document.getElementById('palestra')
 const downloadBtn = document.getElementById('download-btn')
 
+var time = Date.now();
+console.log(time);
+
 const image = new Image()
 image.src = '../../images/certificadoathon.jpg'
 image.onload = function () {
@@ -24,7 +27,7 @@ function drawImageName() {
 function drawImageData(){
 	ctx.font = '20px monotype corsiva'
 	ctx.fillStyle = '#a'
-	ctx.fillText(dataInput.value, 350, 280)
+	ctx.fillText(time, 350, 280)
 }
 function drawImagePalestra(){
 	ctx.font = '25px monotype corsiva'
@@ -40,9 +43,8 @@ nameInput.addEventListener('input', function () {
 	drawImagePalestra()
 })
 dataInput.addEventListener('input', function (){
-	drawImageName()
 	drawImageData()
-	drawImagePalestra()
+
 })
 palestraInput.addEventListener('input', function(){
 	drawImageName()
