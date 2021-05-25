@@ -11,12 +11,13 @@
         </script>";
         session_destroy();
     }
-     
-    if($_REQUEST['enviar'] == ""){
-        $_REQUEST['enviar'] = 0;
+
+    if(isset($_REQUEST['enviar'])){
+        $ref = $_REQUEST['enviar'];
+    } else {
+        $ref = 0;
     }
-    
-    switch($_REQUEST['enviar']){
+    switch($ref){
     case 0:
     $sql = "SELECT * FROM conteudo ORDER BY data desc LIMIT 10";
     break;
