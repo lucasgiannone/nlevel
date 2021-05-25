@@ -156,6 +156,7 @@
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[0]?>" href="#">Editar Usuários</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/conteudo/certificado.php">Gerar Certificados</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="#">Editar Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/conteudo/solicitacao.php">Solicitações de Contéudo</a></li>
                         </ul>
                     </div>
                 </li>
