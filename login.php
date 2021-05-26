@@ -57,8 +57,12 @@ require_once "./components/nav.php"
     if (isset($_REQUEST['uname']) && isset($_REQUEST['psw'])){
         $email = addslashes($_REQUEST['uname']);
         $senha = addslashes($_REQUEST['psw']);
+        //site no local com conexao externa
         $u->conectar("u871029417_athon","92.249.44.207","u871029417_athon","Vitor@123");
+        //site local com xampp
         // $u->conectar("u871029417_athon","localhost","root","");
+        //local com o site no ar
+        //$u->conectar("u871029417_athon","localhost","u871029417_athon","Vitor@123");
 
         if ($u->msgErro == ""){
             if($u->logar($email, $senha)){
