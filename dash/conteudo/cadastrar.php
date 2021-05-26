@@ -72,11 +72,11 @@
                             </tr>
                             <tr>
                                 <td><label for="datetime">Data</label></td>
-                                <td colspan="1"><input name="datetime" type="date" required></td>
+                                <td colspan="1"><input name="datetime" type="date" max="9999-12-31" required></td>
                             </tr>
                             <tr>
                                 <td><label for="time">Hora</label></td>
-                                <td colspan="3"><input name="time" type="time" value="00:00" required></td>          
+                                <td colspan="3"><input name="time" type="time" value="00:00" max="24:59" required></td>          
                             </tr>
                             <tr>
                                 <td><label for="img">Imagem</label></td>
@@ -200,7 +200,7 @@
                 move_uploaded_file($_FILES['imgpal']['tmp_name'], $_UP['pasta']. $nome_imgpal);
                 echo "
                 <script>
-                    alert(\"Contéudo criado com sucesso\");
+                    alert(\"Contéudo solicitado com sucesso\");
                 </script>
                 ";
             } else {
