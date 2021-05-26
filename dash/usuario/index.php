@@ -35,17 +35,19 @@
     <body class="app">
     <?php require '../components/navbar.php';?>
     <div class="app-wrapper pl-3 pl-md-5">
-    <div class="app-content pt-3">
-        <div class="container row px-md-5">
+        <div class="app-content pt-3">
+            <div class="container row px-md-5">
                 <h1 class="page-title pb-0">Inscrito:</h1>
-                <!-- SEARCH -->
-                <form action="" method="post">
-                <input type="text" name="input" id="input" placeholder="Pesquise o conteúdo">
-                <button type="submit" name="enviar" value="1">
+                <!-- search bar -->
+                <form class="" action="" method="post">
+                <div class="row m-1 mb-2">
+                <input class="col"  type="text" name="input" id="input" placeholder="Pesquise o conteúdo">
+                <button class="col-2 col-sm-2 col-md-1" type="submit" name="enviar" value="1">
                 <i class="fas fa-search"></i>
                 </button>
-                </form>
                 </div>
+                </form>
+                
                     <!-- CONTEÚDO -->
                     <?php
                     include('./card.php');

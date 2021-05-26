@@ -40,7 +40,7 @@
                 <br>
                 <p> É necessario entrar com a conta do youtube para conversar no chat ao vivo com o palestrante </p>
         </div>
-        <a href="https://www.youtube.com/account_advanced?hl=pt-br" target="_blank">
+        <a href="https://accounts.google.com/signin/v2/identifier?hl=pt-BR&passive=true&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank">
         <button type="button" class="btn btn-primary btn-lg btn-block">Entrar com a conta do youtube</button>
         </a>
     </div>

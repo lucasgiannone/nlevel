@@ -1,6 +1,20 @@
 <?php
 include('../../class/dbconn.php'); 
 
+if(isset($_REQUEST['enviar'])){
+    $ref = $_REQUEST['enviar'];
+} else {
+    $ref = 0;
+}
+switch($ref){
+case 0:
+$sql = "SELECT * FROM conteudo ORDER BY data desc LIMIT 10";
+break;
+case 1:
+$sql = "SELECT * FROM conteudo WHERE titulo LIKE \"%{$_REQUEST['input']}%\"";
+break;
+}
+
 $query = mysqli_query($conn,$sql);
 
 while($row = mysqli_fetch_array($query)){

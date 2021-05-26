@@ -12,20 +12,6 @@
         session_destroy();
     }
 
-    if(isset($_REQUEST['enviar'])){
-        $ref = $_REQUEST['enviar'];
-    } else {
-        $ref = 0;
-    }
-    switch($ref){
-    case 0:
-    $sql = "SELECT * FROM conteudo ORDER BY data desc LIMIT 10";
-    break;
-    case 1:
-    $sql = "SELECT * FROM conteudo WHERE titulo LIKE \"%{$_REQUEST['input']}%\"";
-    break;
-    }
-
     $conteudo = "active";
 ?>
 <!DOCTYPE html>
@@ -44,22 +30,20 @@
 <!-- Estrutura Conteúdo -->
     <body class="app">
     <?php require '../components/navbar.php';?>
-
-
     <div class="app-wrapper pl-3 pl-md-5">
         <div class="app-content pt-3">
             <div class="container row px-md-5">
                 <h1 class="page-title pb-0">Conteúdo:</h1>
                 <!-- search bar -->
-                <form action="" method="post">
-                <input type="text" name="input" id="input" placeholder="Pesquise o conteúdo">
-                <button type="submit" name="enviar" value="1">
+                <form class="" action="" method="post">
+                <div class="row m-1 mb-2">
+                <input class="col"  type="text" name="input" id="input" placeholder="Pesquise o conteúdo">
+                <button class="col-2 col-sm-2 col-md-1" type="submit" name="enviar" value="1">
                 <i class="fas fa-search"></i>
                 </button>
+                </div>
                 </form>
-                <?php
-
-                ?>
+                
                     <!-- CONTEÚDO -->
                     <?php
                     include('./cards.php');

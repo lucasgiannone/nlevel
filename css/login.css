@@ -3,17 +3,12 @@
   margin: 0;
   text-decoration: none;
   list-style: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 #loginpage {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  background: -webkit-gradient(linear, left top, right top, from(#92278f), color-stop(35%, #ef4136), to(#fbb040));
   background: linear-gradient(90deg, #92278f 0%, #ef4136 35%, #fbb040 100%);
   height: 90vh;
 }
@@ -35,8 +30,7 @@ form {
   width: -moz-fit-content;
   width: fit-content;
   background-color: white;
-  -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
   padding-bottom: 10px;
 }
 
@@ -77,7 +71,6 @@ form > input[type=text], form > input[type=password] {
   padding: 14px 20px;
   margin: 20px;
   border: none;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000), to(#000)) center bottom 5px/calc(100% - 10px) 1px no-repeat;
   background: linear-gradient(#000, #000) center bottom 5px/calc(100% - 10px) 1px no-repeat;
   outline: none;
 }
@@ -87,13 +80,16 @@ form > input[type=text], form > input[type=password] {
   form {
     max-width: 80%;
   }
+
   form .logoLogin {
     max-width: 50%;
   }
+
   #loginpage {
     max-width: 100%;
     text-align: center;
   }
+
   form > input[type=text], form > input[type=password] {
     padding: 2%;
     margin: 10;
@@ -101,13 +97,9 @@ form > input[type=text], form > input[type=password] {
     text-align: center;
   }
 }
-
 /* Footer */
 footer {
-  -webkit-box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.2);
-          box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.2);
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
+  box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.2);
   display: inline-flex;
   line-height: 40px;
   min-width: 100%;
@@ -127,6 +119,4 @@ footer {
     text-align: center;
   }
 }
-
-/* Final Footer */
-/*# sourceMappingURL=login.css.map */
+/* Final Footer *//*# sourceMappingURL=login.css.map */
