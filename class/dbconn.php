@@ -1,13 +1,13 @@
 <?php
 
-// $servername = "92.249.44.207";
-// $username = "u871029417_athon";
-// $password = "Vitor@123";
-// $dbname = "u871029417_athon";
-$servername = "localhost";
-$username = "root";
-$password = "";
+$servername = "92.249.44.207";
+$username = "u871029417_athon";
+$password = "Vitor@123";
 $dbname = "u871029417_athon";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "u871029417_athon";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);

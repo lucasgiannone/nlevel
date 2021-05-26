@@ -17,6 +17,7 @@ while($row = mysqli_fetch_array($query)){
 .img-pal{
     display: inline-block;
     width: 15vw;
+    height: 15vw;
     border-radius: 50%;
 
     background-repeat: no-repeat;

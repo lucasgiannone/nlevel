@@ -7,9 +7,6 @@ $query = mysqli_query($conn,$sql);
 
 while($row = mysqli_fetch_array($query)){
 ?>
-<script>
-    window.frames["livechat"].getElementsByTagName("a")[0].target="_blank"
-</script>
 <!DOCTYPE html>
 <!-- HEAD -->
 <html lang="en"> 
@@ -22,6 +19,9 @@ while($row = mysqli_fetch_array($query)){
         <script defer src="../assets/plugins/fontawesome/js/all.min.js"></script>
         <!-- App CSS -->  
         <link id="theme-style" rel="stylesheet" href="../assets/css/portal.css">
+        <script type="text/javascript">
+        $document.getElementById('livechat').contentDocument.getElementById('button').setAttribute("target","_blank");
+        </script>
     </head> 
 <!-- Estrutura Conteúdo -->
 <body class="app">
@@ -75,7 +75,7 @@ while($row = mysqli_fetch_array($query)){
                             </script>
             </div>
             <div class="col-sm-12 col-md-4 p-0 m-0">
-            <iframe name="livechat" src="https://studio.youtube.com/live_chat?v=<?=$row['url']?>&embed_domain=<?=$_SERVER['HTTP_HOST']?>"></iframe>            </div>
+            <iframe id="livechat" src="https://studio.youtube.com/live_chat?v=<?=$row['url']?>&embed_domain=<?=$_SERVER['HTTP_HOST']?>"></iframe>            </div>
     </div>
     
     <style>

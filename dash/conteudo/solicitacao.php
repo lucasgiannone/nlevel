@@ -12,6 +12,12 @@
     }
 
     include '../../class/dbconn.php';
+
+    $administrador = "active";
+    $admlink[3] = "active";
+    $admtoggle[0] = "true";
+    $admtoggle[1] = "show";
+
     ?>
 <!DOCTYPE html>
 <!-- HEAD -->

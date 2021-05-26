@@ -13,17 +13,17 @@
     }
 
     include '../../class/dbconn.php';
-    $palestrante = "active";
-    $pallink[0] = "active";
-    $paltoggle[0] = "true";
-    $paltoggle[1] = "show";
+    $administrador = "active";
+    $admlink[0] = "active";
+    $admtoggle[0] = "true";
+    $admtoggle[1] = "show";
 
 ?>
 <!DOCTYPE html>
 <!-- HEAD -->
 <html lang="en"> 
     <head>
-        <title>Solicitação de conteúdo</title>
+    <title>Solicitação de conteúdo</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Dependencias -->

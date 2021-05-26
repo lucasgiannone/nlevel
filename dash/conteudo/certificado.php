@@ -13,11 +13,10 @@
 
 
 
-    $navtogglestate = "active";
-    $administrador = $navtogglestate;
-    $admlink [0] = $navtogglestate;
-    $admtoggle [0] = "true";
-    $admtoggle [1] = "show";
+    $administrador = "active";
+    $admlink[2] = "active";
+    $admtoggle[0] = "true";
+    $admtoggle[1] = "show";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +73,7 @@
 
                         </table>
                                 <a href="#" id="download-btn">Download</a>
-                                <canvas id="canvas"height="350px" width="500px"></canvas>
+                                <canvas style="display:none;" id="canvas"height="350px" width="500px"></canvas>
                                 <!-- A4 <canvas id="canvas"height="2480px" width="3508px"></canvas> -->
                     </form>
             </div>
