@@ -35,10 +35,57 @@
                 <h1 class="page-title pb-2">Solicitações:</h1>   
                         <!-- Class -->
                         <?php
-                            /*$palestrante = "active";
-                            $pallink[0] = "active";
-                            $paltoggle[0] = "true";
-                            $paltoggle[1] = "show";*/
+                            switch(@$_REQUEST['btn_conteudo']){
+                                case 1:
+                                    $sql = "SELECT * FROM conteudoParaAutorizar WHERE id_conteudo = '{$_REQUEST['id_conteudo']}'";
+                                    $query = mysqli_query($conn, $sql);
+                                    $result = mysqli_fetch_assoc($query);
+
+                                    $sql = "INSERT INTO conteudo (
+                                        imagem,
+                                        titulo,
+                                        descricao,
+                                        `data`,
+                                        `url`,
+                                        palestrante, 
+                                        img_palestrante )
+                                        VALUES (
+                                            '{$result['imagem']}',
+                                            '{$result['titulo']}',
+                                            '{$result['descricao']}',
+                                            '{$result['data']}',
+                                            '{$result['url']}',
+                                            '{$result['palestrante']}',
+                                            '{$result['img_palestrante']}'
+                                        )                                        
+                                    ";
+
+                                    if (mysqli_query($conn, $sql)){
+                                        $sql = "DELETE FROM conteudoParaAutorizar WHERE id_conteudo = '{$_REQUEST['id_conteudo']}'";
+                                        mysqli_query($conn, $sql);
+                                        echo "
+                                            <script>
+                                                alert('Contéudo Aceito');
+                                            </script>
+                                        ";
+                                    } else {
+                                        echo "
+                                            <script>
+                                                alert('Erro ao Aceitar Conteúdo');
+                                            </script>
+                                        ";
+                                    }
+                                    $_REQUEST['btn_conteudo'] = 0;
+                                break;
+
+                                case 2:
+                                    $sql = "DELETE FROM conteudoParaAutorizar WHERE id_conteudo = '{$_REQUEST['id_conteudo']}'";
+                                    mysqli_query($conn, $sql);
+                                    $_REQUEST['btn_conteudo'] = 0;
+                                break;
+
+                                default;
+                            }
 
                             $sql = "SELECT * FROM conteudoParaAutorizar";
 
@@ -47,8 +94,8 @@
                             if (mysqli_num_rows($query) > 0){
                                 $conteudo = [];
                                 while ($row = mysqli_fetch_assoc($query)) {
-                                    $row["Aceitar"] = "<button>Aceitar</button>";
-                                    $row["Recusar"] = "<button>Recusar</button>";   
+                                    $row["Aceitar"] = "<button name='btn_conteudo'><a href='solicitacao.php?btn_conteudo=1&id_conteudo={$row['id_conteudo']}'>Aceitar</a></button>";
+                                    $row["Recusar"] = "<button name='btn_conteudo'><a href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
                                     $conteudo[] = $row;
                                 }
 
