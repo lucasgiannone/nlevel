@@ -36,13 +36,8 @@
             <h1 class="page-title">
                 Bem vindo ao portal, <?php echo splitName($_SESSION['nome']);
                 ?>!
-            </h1>
-                <br>
-                <p> É necessario entrar com a conta do youtube para conversar no chat ao vivo com o palestrante </p>
+            </h1>             
         </div>
-        <a href="https://accounts.google.com/signin/v2/identifier?hl=pt-BR&passive=true&flowName=GlifWebSignIn&flowEntry=ServiceLogin" target="_blank">
-        <button type="button" class="btn btn-primary btn-lg btn-block">Entrar com a conta do youtube</button>
-        </a>
     </div>
 </div>
 

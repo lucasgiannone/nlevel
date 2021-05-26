@@ -32,7 +32,7 @@
     <title>Next Level - Alterar Dados</title>
 	<link rel="icon" href="https://athonedu.com.br/wp-content/uploads/2021/01/favicon.png" sizes="192x192">
 
-	<link rel="stylesheet" href="../css/altsenha.css">
+	<link rel="stylesheet" href="../css/config.css">
 	<script src="../scripts/fontawesome.js" crossorigin="anonymous"></script>
 	<script src="../scripts/jquery.js"></script>
 	<script src="../scripts/mask.js"></script>
