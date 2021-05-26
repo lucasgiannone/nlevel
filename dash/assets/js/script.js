@@ -5,11 +5,8 @@ const dataInput = document.getElementById('data')
 const palestraInput = document.getElementById('palestra')
 const downloadBtn = document.getElementById('download-btn')
 
-var time = Date.now();
-console.log(time);
-
 const image = new Image()
-image.src = '../../images/certificadoathon.jpg'
+image.src = '../../images/certificadoatho.jpg'
 image.onload = function () {
 	drawImageName()
 }
