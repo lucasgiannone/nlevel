@@ -2,10 +2,10 @@
 
 
 //local com o site no local com conexao externa
-// $servername = "92.249.44.207";
-// $username = "u871029417_athon";
-// $password = "Vitor@123";
-// $dbname = "u871029417_athon";
+$servername = "92.249.44.207";
+$username = "u871029417_athon";
+$password = "Vitor@123";
+$dbname = "u871029417_athon";
 
 //local com o site no ar
 // $servername = "localhost";

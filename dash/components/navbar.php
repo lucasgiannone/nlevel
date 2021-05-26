@@ -153,7 +153,7 @@
                     <div id="submenu-3" class="collapse submenu submenu-3 <?=$admtoggle[1]?>" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                         <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/conteudo/cadastraradm.php">Solicitar Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="#">Alterar Tipo de Conta</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/conteudo/alterarconta.php">Alterar Tipo de Conta</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/conteudo/certificado.php">Gerar Certificados</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/conteudo/solicitacao.php">Solicitações de Contéudo</a></li>
                         </ul>
