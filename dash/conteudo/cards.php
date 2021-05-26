@@ -8,10 +8,10 @@ if(isset($_REQUEST['enviar'])){
 }
 switch($ref){
 case 0:
-$sql = "SELECT * FROM conteudo ORDER BY data desc LIMIT 10";
+$sql = "SELECT * FROM conteudo ORDER BY data desc";
 break;
 case 1:
-$sql = "SELECT * FROM conteudo WHERE titulo LIKE \"%{$_REQUEST['input']}%\" ORDER BY data desc LIMIT 10";
+$sql = "SELECT * FROM conteudo WHERE titulo LIKE \"%{$_REQUEST['input']}%\" ORDER BY data desc";
 break;
 }
 
