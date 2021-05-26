@@ -18,7 +18,7 @@
         echo "
         <script>
             alert('Acesso não permitido!');
-            window.location='../../pages/login';
+            window.location='../../login';
         </script>";
         session_destroy();
     } 

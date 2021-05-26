@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 
 function cadastrarConteudo($conn, $nome_imagem, $titulo, $descricao, $data, $link, $palestrante, $nome_imgpal){
 
-  $sql = "INSERT INTO `conteudo` (`imagem`, `titulo`, `descricao`, `data`, `url`, `palestrante`, `img_palestrante`)
+  $sql = "INSERT INTO `conteudoParaAutorizar` (`imagem`, `titulo`, `descricao`, `data`, `url`, `palestrante`, `img_palestrante`)
           VALUES ('$nome_imagem', '$titulo', '$descricao', '$data', '$link', '$palestrante', '$nome_imgpal')";
           
   return mysqli_query($conn, $sql);
