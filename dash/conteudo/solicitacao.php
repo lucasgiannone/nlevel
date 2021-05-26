@@ -98,10 +98,8 @@
                                     $row["Recusar"] = "<button name='btn_conteudo'><a href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
                                     $conteudo[] = $row;
                                 }
-
+                                
                                 $index = array_keys(current($conteudo));
-                                $valores = array_values(current($conteudo));
-
                                 ?>
                                 <table class="table table-hover">
                                     <thead>
@@ -115,10 +113,13 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                        foreach ($valores as $value){
+                                        foreach ($conteudo as $values){
+                                            echo "<tr>";
+                                            foreach ($values as $value)
                                             echo "
                                                 <td>$value</td>
                                             ";
+                                            echo "</tr>";
                                         }
                                     ?>
                                     </tbody>
