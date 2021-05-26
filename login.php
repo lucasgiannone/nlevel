@@ -58,7 +58,7 @@ require_once "./components/nav.php"
         $email = addslashes($_REQUEST['uname']);
         $senha = addslashes($_REQUEST['psw']);
         // $u->conectar("u871029417_athon","92.249.44.207","u871029417_athon","Vitor@123");
-        $u->conectar("next_level","localhost","root","");
+        $u->conectar("u871029417_athon","localhost","root","");
 
         if ($u->msgErro == ""){
             if($u->logar($email, $senha)){
