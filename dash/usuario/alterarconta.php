@@ -2,7 +2,7 @@
     require_once '../../class/usuarios.php';
     session_start();
 
-    if(!isset($_SESSION['perfil']) && $_SESSION['perfil'] != 3 || $_SESSION['perfil'] != 4){
+    if(!isset($_SESSION['perfil']) && ($_SESSION['perfil'] != 3 || $_SESSION['perfil'] != 4)){
         echo "
         <script>
             alert('Acesso não permitido!');
@@ -74,29 +74,21 @@
                     <th><?=$pfmask?></th>
                     <td>
                     <label class="btn">
-                    <i class="fa fa-edit"></i> Editar <button type="button" data-toggle="modal" data-target="#modalEdit" style="display: none;" name="edit" required>
+                    <i class="fa fa-edit"></i> Editar <button type="button" data-toggle="modal" data-target="#modal-<?=$row['id_usuario']?>" style="display: none;" name="edit" required>
                     </label>
                     </td>
-                        <!-- Button trigger modal -->
-                        <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEdit">
-                        Launch demo modal
-                        </button> -->
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
+                    <!-- MODAL -->
+                    <div class="modal fade" id="modal-<?=$row['id_usuario']?>" tabindex="-1" role="dialog" aria-labelledby="modalEditLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="modalEditLabel">Alterar Tipo de Conta:</h5>
-                                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
-                                <!-- <span aria-hidden="true">&times;</span> -->
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <form method="post">
                                     <div class="m-1">
-                                    <label for="iduser">ID do Usuário:</label>
-                                    <label for="iduser"><?=$row['id_usuario']?></label>
+                                    <label for="iduser">ID do Usuário:</label> <?=$row['id_usuario']?>
                                     <input type="hidden" name="iduser" id="iduser" value="<?=$row['id_usuario']?>">
                                     </div>
                                     <div class="m-1">
@@ -122,8 +114,7 @@
                             </div>
                         </div>
                         </div>
-                    
-                    
+                    <!-- MODAL END -->               
                 </tr>
                 <?php
                 }
@@ -141,9 +132,6 @@
     
 </body>
 </html>
-<?php 
-    if(isset($_POST['editID'])){
-    $select = $_POST['editID'];
-}
-    $sqlupdate = "UPDATE usuarios SET perfil = $select WHERE "
+<?php
+
 ?>
