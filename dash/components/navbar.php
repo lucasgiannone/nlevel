@@ -79,7 +79,7 @@
                 </li>
 
                 <?php
-                    if($_SESSION['perfil'] == 1 || $_SESSION['perfil'] == 4){
+                    if($_SESSION['perfil'] <= 3 || $_SESSION['perfil'] == 4){
                 ?>
 
 
@@ -153,7 +153,7 @@
                     <div id="submenu-3" class="collapse submenu submenu-3 <?=$admtoggle[1]?>" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                         <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/conteudo/cadastraradm.php">Solicitar Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/conteudo/alterarconta.php">Alterar Tipo de Conta</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/usuario/alterarconta.php">Alterar Tipo de Conta</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/conteudo/certificado.php">Gerar Certificados</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/conteudo/solicitacao.php">Solicitações de Contéudo</a></li>
                         </ul>
@@ -165,23 +165,6 @@
 
             </ul>
         </nav>
-        <div class="app-sidepanel-footer">
-            <nav class="app-nav app-nav-footer">
-                <ul class="app-menu footer-menu list-unstyled">
-                    <li class="nav-item">
-                    <a class="nav-link" href="/dash/ajuda.php">
-                            <span class="nav-icon">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
-                            </svg>
-                            </span>
-                            <span class="nav-link-text">Ajuda</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
     </div>
     </div>
 </nav>

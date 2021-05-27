@@ -1,5 +1,5 @@
 $buttons: #0b0c10;
-$input-width: 300px;
+$input-width: calc(100% - 60px);
 
 *{
 	padding: 0;
@@ -97,7 +97,6 @@ form button {
 	form>input[type=text], form>input[type=password]{
 		padding: 2%;
 		margin: 10;
-		max-width: 80%;
 		text-align: center;
 		
 	}

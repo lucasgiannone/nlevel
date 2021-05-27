@@ -68,7 +68,7 @@ $interaction: lightgray;
 
 }
 /* Botão para mobile */
-@media (max-width: 1024px){
+@media (max-width: 768px){
 	.checkbtn{
 		display: grid;
 	}
@@ -168,10 +168,13 @@ $buttons: #0b0c10;
 
 	input[type=email], input[type=date], input[type=password], input[type=text], input[type=tel]{
 		display: flex;
-		@media screen and (min-width: 1024px) {
+		@media (min-width: 1024px) {
 			width: calc(55vw - 10px);	
 		}
-		@media screen and (max-width: 768px) {
+		@media (min-width: 770px) and (max-width: 1020px) {
+			width: calc(80vw - 10px);	
+		}
+		@media (max-width: 768px) {
 			width: calc(95vw - 10px);	
 		}
 		width: calc(80vw - 10px);
@@ -185,6 +188,9 @@ $buttons: #0b0c10;
 		display: flex;
 		@media screen and (min-width: 1024px) {
 			width: 55vw;	
+		}
+		@media (min-width: 770px) and (max-width: 1020px) {
+			width: calc(80vw);	
 		}
 		@media screen and (max-width: 768px) {
 			width: 95vw;

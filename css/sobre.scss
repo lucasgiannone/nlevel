@@ -37,8 +37,13 @@ $base: #0b0c10;
 //Sobrepage
 #sobrepage{
 	max-width: 100%;
-	margin: 50px;
-    margin-inline: 100px;
+	@media (min-width: 1024px) {
+		margin-inline: 20vw;
+	}
+	@media (min-width: 768px){
+		margin-inline: 10vw;
+	}
+	@media (min-width: )
 }
 #sobrepage>h1{
 text-align: center;

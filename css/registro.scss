@@ -74,21 +74,18 @@ $buttons: #0b0c10;
 	/* Inputs */
 	input[type=email], input[type=date], input[type=password], input[type=text], input[type=tel]{
 		display: flex;
-		width: 600px;
+		width: calc(95% - 33px);
 		padding: 1rem;
 		margin: 10px;
-		border: 1px solid #ccc;
-		max-width: 80%;
-		
+		border: 1px solid #ccc;		
 	}
 
 	form select{
 		display: flex;
-		width: 635px;
+		width: 95%;
 		padding: 1rem;
 		margin: 10px;
 		border: 1px solid #ccc;
-		max-width: 90%;
 	}
 
 button[type=submit]{
