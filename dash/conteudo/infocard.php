@@ -38,6 +38,7 @@ while($row = mysqli_fetch_array($query)){
         </div>
     </div>
     
+
     <div class="app-card-body w-100">
         <!-- TITULO CONTEUDO -->
         <div style="float: left; position: relative;" class="item p-3">    
@@ -48,7 +49,7 @@ while($row = mysqli_fetch_array($query)){
         <div class="item mt-3">
             <div class="row justify-content-between align-items-center">
                 <div style="font-size:20px;" class="col-auto w-100 ">
-                    <div class="item-data border-bottom">
+                    <div class="item-data border-bottom"style="white-space: pre-wrap;">
                         <p><?=$row['descricao']?></p>
                     </div>
                 </div><!--//col-->
