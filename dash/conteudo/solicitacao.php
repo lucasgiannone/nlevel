@@ -100,14 +100,12 @@
                             if (mysqli_num_rows($query) > 0){
                                 $conteudo = [];
                                 while ($row = mysqli_fetch_assoc($query)) {
-                                    $row["Aceitar"] = "<button name='btn_conteudo'><a href='solicitacao.php?btn_conteudo=1&id_conteudo={$row['id_conteudo']}'>Aceitar</a></button>";
-                                    $row["Recusar"] = "<button name='btn_conteudo'><a href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
+                                    $row["Aceitar"] = "<button class='btn btn-success' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=1&id_conteudo={$row['id_conteudo']}'>Aceitar</a></button>";
+                                    $row["Recusar"] = "<button class='btn btn-danger' name='btn_conteudo'><a style='color:black; href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
                                     $conteudo[] = $row;
                                 }
-
+                                
                                 $index = array_keys(current($conteudo));
-                                $valores = array_values(current($conteudo));
-
                                 ?>
                                 <table class="table table-hover">
                                     <thead>
@@ -121,10 +119,13 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                        foreach ($valores as $value){
+                                        foreach ($conteudo as $values){
+                                            echo "<tr>";
+                                            foreach ($values as $value)
                                             echo "
                                                 <td>$value</td>
                                             ";
+                                            echo "</tr>";
                                         }
                                     ?>
                                     </tbody>
