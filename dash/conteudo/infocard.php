@@ -84,6 +84,17 @@ while($row = mysqli_fetch_array($query)){
                 <?php 
                 }
                 ?>
+                 <?php
+                    if($_SESSION['perfil'] == 3 || $_SESSION['perfil'] == 4){
+                ?>
+                <div class="row">
+                    <div class="col-12">
+                        <a style="float:right;" href="../../class/conteudo.php?btn=3&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Excluir conteudo</strong></a>
+                    </div>    
+                </div>
+                <?php 
+                }
+                ?>
             </div>
         </div>
     </div>

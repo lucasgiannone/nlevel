@@ -51,6 +51,17 @@ function desregistroconteudo($conn, $conteudo, $userid){
     return false;
   }
 }
+
+function excluirconteudo ($conn, $conteudo){
+  $sql = "DELETE conteudo, conteudoaluno from conteudo inner join conteudoaluno on conteudo.id_conteudo = conteudoaluno.id_conteudo 
+          where conteudo.id_conteudo and conteudoaluno.id_conteudo = '$conteudo'";
+  if (mysqli_query($conn, $sql)){
+    return true;
+  }
+  else{
+    return false;
+  }
+}
     
 
 
