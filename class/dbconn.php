@@ -52,9 +52,19 @@ function desregistroconteudo($conn, $conteudo, $userid){
   }
 }
 
+
+
 function excluirconteudo ($conn, $conteudo){
-  $sql = "DELETE conteudo, conteudoaluno from conteudo inner join conteudoaluno on conteudo.id_conteudo = conteudoaluno.id_conteudo 
-          where conteudo.id_conteudo and conteudoaluno.id_conteudo = '$conteudo'";
+  $versetaregistrado =  "SELECT * FROM conteudoaluno WHERE id_conteudo = $conteudo";
+  $queryregistrado = mysqli_query($conn, $versetaregistrado);
+   
+  if (mysqli_num_rows($queryregistrado)>0)
+          {
+            $sql = "DELETE conteudo, conteudoaluno from conteudo inner join conteudoaluno on conteudo.id_conteudo = conteudoaluno.id_conteudo 
+                    where conteudo.id_conteudo and conteudoaluno.id_conteudo = '$conteudo'";
+          }else{
+            $sql = "DELETE FROM conteudo where id_conteudo = $conteudo";
+          }
   if (mysqli_query($conn, $sql)){
     return true;
   }
