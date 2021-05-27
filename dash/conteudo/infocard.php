@@ -38,6 +38,7 @@ while($row = mysqli_fetch_array($query)){
         </div>
     </div>
     
+
     <div class="app-card-body w-100">
         <!-- TITULO CONTEUDO -->
         <div style="float: left; position: relative;" class="item p-3">    
@@ -48,7 +49,7 @@ while($row = mysqli_fetch_array($query)){
         <div class="item mt-3">
             <div class="row justify-content-between align-items-center">
                 <div style="font-size:20px;" class="col-auto w-100 ">
-                    <div class="item-data border-bottom">
+                    <div class="item-data border-bottom"style="white-space: pre-wrap;">
                         <p><?=$row['descricao']?></p>
                     </div>
                 </div><!--//col-->
@@ -78,6 +79,17 @@ while($row = mysqli_fetch_array($query)){
                 <div class="row">
                     <div class="col-12">
                         <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
+                    </div>    
+                </div>
+                <?php 
+                }
+                ?>
+                 <?php
+                    if($_SESSION['perfil'] == 3 || $_SESSION['perfil'] == 4){
+                ?>
+                <div class="row">
+                    <div class="col-12">
+                        <a style="float:right;" href="../../class/conteudo.php?btn=3&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Excluir conteudo</strong></a>
                     </div>    
                 </div>
                 <?php 

@@ -40,7 +40,26 @@
             }
 
         break;
-        
+        case 3:
+            $excluir = excluirconteudo($conn,$conteudo);
+
+            if($excluir == "true"){
+                echo "
+                <script> 
+                    alert('conteudo excluido com sucesso.');
+                    window.location='/dash/conteudo/';
+                </script>
+                ";
+            }else{
+                echo "
+                <script> 
+                    alert('conteudo não foi excluido.');
+                    window.location='/dash/conteudo/';
+                </script>
+                ";
+            }
+
+        break;
     }
     
 ?>

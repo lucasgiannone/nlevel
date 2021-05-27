@@ -64,7 +64,7 @@
                             </tr>
                             <tr>
                                 <td><label for="descricao">Descrição</label></td>
-                                <td><input name="descricao" type="text" required></td>        
+                                <td><textarea name="descricao" type="text" class="w-100" style="height:100px; font-size:12px" ></textarea></td>                              
                             </tr>
                             <tr>
                                 <td><label for="link">URL</label></td>
