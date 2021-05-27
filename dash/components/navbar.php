@@ -79,7 +79,7 @@
                 </li>
 
                 <?php
-                    if($_SESSION['perfil'] <= 3 || $_SESSION['perfil'] == 4){
+                    if($_SESSION['perfil'] == 1 || ($_SESSION['perfil'] >=3)){
                 ?>
 
 
@@ -107,7 +107,8 @@
                     </div>
                 </li>
                 <?php 
-                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 4){
+                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] >= 3){
+                        
                 ?>
                 <!-- CAMPO DO PALESTRANTE -->
                 <li class="nav-item has-submenu">
@@ -128,7 +129,9 @@
                     </a>
                     <div id="submenu-2" class="collapse submenu submenu-2 <?=$paltoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                            <li class="submenu-item"><a class="submenu-link <?=$pallink[0]?>" href="/dash/conteudo/cadastrar.php">Solicitar Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$pallink[0]?>" href="/dash/palestrante/cadastrar.php">Solicitar Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?= $pallink[1]?>" href="/dash/palestrante/">Seu Conteúdo</a></li>
+
                         </ul>
                     </div>
                 </li>
@@ -152,10 +155,10 @@
                     </a>
                     <div id="submenu-3" class="collapse submenu submenu-3 <?=$admtoggle[1]?>" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
-                        <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/conteudo/cadastraradm.php">Solicitar Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/usuario/alterarconta.php">Alterar Tipo de Conta</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/conteudo/certificado.php">Gerar Certificados</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/conteudo/solicitacao.php">Solicitações de Contéudo</a></li>
+                        <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/admin/cadastraradm.php">Solicitar Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/admin/alterarconta.php">Alterar Tipo de Conta</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/admin/certificado.php">Gerar Certificados</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/admin/solicitacao.php">Solicitações de Contéudo</a></li>
                         </ul>
                     </div>
                 </li>
