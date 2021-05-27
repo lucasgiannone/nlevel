@@ -38,6 +38,31 @@
         <div class="app-content pt-3">
             <div class="container row px-md-5">
                 <h1 class="page-title pb-2">Usuários:</h1>
+                <!-- search bar -->
+                <form class="" action="" method="post">
+                <div class="row m-1 mb-2">
+                <input class="col"  type="text" name="input" id="input" placeholder="Pesquise o nome do usuário">
+                <button class="col-2 col-sm-2 col-md-1" type="submit" name="enviar" value="1">
+                <i class="fas fa-search"></i>
+                </button>
+                </div>
+                </form>
+                <?php
+                if(isset($_REQUEST['enviar'])){
+                    $ref = $_REQUEST['enviar'];
+                } else {
+                    $ref = 0;
+                }
+                switch($ref){
+                case 0:
+                $sql="SELECT * FROM usuarios ORDER BY id_usuario ASC";
+                break;
+                case 1:
+                $sql = "SELECT * FROM usuarios WHERE nome LIKE \"%{$_REQUEST['input']}%\" ORDER BY nome ASC";
+                break;
+                }
+                ?>
+                <!-- / search bar -->
                 <table class="table">
                 <thead>
                     <th scope="col">ID do Usuário</th>
@@ -48,15 +73,15 @@
                 </thead>
                 <tbody>
                 <?php
-                $sql="SELECT * FROM usuarios";
+                
                 $query = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_array($query)){
                     switch($row['perfil']){
                         case 1:
-                            $pfmask = "Usuário";
+                            $pfmask = "Aluno";
                             break;
                         case 2:
-                            $pfmask = "Palestrante";
+                            $pfmask = "Professor";
                             break;
                         case 3:
                             $pfmask = "Administrador";
@@ -86,7 +111,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form method="post">
+                                <form action="alterar-actpage.php" method="post">
                                     <div class="m-1">
                                     <label for="iduser">ID do Usuário:</label> <?=$row['id_usuario']?>
                                     <input type="hidden" name="iduser" id="iduser" value="<?=$row['id_usuario']?>">
@@ -104,16 +129,16 @@
                                     }
                                     ?>
                                     </select>
-                                    </div>
-                                </form>
+                                    </div> 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Fechar</button>
-                                <input type="submit" class="btn btn-outline-primary" value="Salvar">
+                                <button type="submit" class="btn btn-outline-primary">Salvar</button>
                             </div>
                             </div>
                         </div>
                         </div>
+                        </form>
                     <!-- MODAL END -->               
                 </tr>
                 <?php
@@ -132,6 +157,3 @@
     
 </body>
 </html>
-<?php
-
-?>
