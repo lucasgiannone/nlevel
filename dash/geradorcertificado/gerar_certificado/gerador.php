@@ -1,8 +1,8 @@
 <?php
 setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese' );
 date_default_timezone_set( 'America/Sao_Paulo' );
-require('fpdf/alphapdf.php');
-require('PHPMailer/class.phpmailer.php');
+require('./fpdf/alphapdf.php');
+require('./PHPMailer/class.phpmailer.php');
 
 
 // --------- Variáveis do Formulário ----- //
@@ -11,10 +11,10 @@ $nome     = utf8_decode($_POST['nome']);
 $cpf      = $_POST['cpf'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
-$empresa  = "Universidade do Lincoln Borges";
-$curso    = "Workshop Segurança da Informação";
-$data     = "29/05/2017";
-$carga_h  = "8 horas";
+$empresa  = "NextLevel - Athon Ensino Superior";
+$curso    = "CISCO";
+$data     = "27/05/2021";
+$carga_h  = "180 horas";
 
 
 $texto1 = utf8_decode($empresa);
