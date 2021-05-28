@@ -36,7 +36,12 @@
             <h1 class="page-title">
                 Bem vindo ao portal, <?php echo splitName($_SESSION['nome']);
                 ?>!
-            </h1>             
+            </h1>    
+            <br>
+            <h4>
+            Nossas palestras e eventos garantem um excelente certificado de treinamento. Caso seja do seu interesse 
+            assista 100% para garantir o seu certificado.
+            </h4>
         </div>
     </div>
 </div>
