@@ -51,6 +51,10 @@ require_once "./components/nav.php"
             <p>
             Prezar sempre pelo bom atendimento. Exercer nossas atividades com ética, qualidade e respeito. Garantir que os interesses coletivos prevaleçam e conquistar a confiança de nossos colaboradores e clientes.
         </p> 
+        <br>
+        <h2>Está esperando o que?</h2>
+        <p>Cadastre-se agora mesmo e venha fazer parte de um futuro repleto de invoações e tecnologias com nossas palestras e eventos</p>
+        <br>
 </div>
 
     <!-- FOOTER -->

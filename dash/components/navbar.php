@@ -102,7 +102,6 @@
                     <div id="submenu-4" class="submenu submenu-4 <?=$utoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link <?= $ulink[0]?>" href="/dash/usuario/">Seu Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?= $ulink[1]?>" href="#">Seus Certificados</a></li>
                         </ul>
                     </div>
                 </li>
