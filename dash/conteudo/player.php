@@ -73,23 +73,23 @@ while($row = mysqli_fetch_array($query)){
                                         if (timer == true){
                                             alert("Deu certo;");   
 
-                                            /*(async () => {
+                                            (async () => {
                                                 const db = require("./conn");
                                                 console.log('Começou!');
                                             
-                                                console.log("SELECT * FROM conteudoaluno WHERE id =");
+                                                console.log("SELECT * FROM conteudoaluno WHERE id_usuario ="+id_usuario+"");
                                                 const clientes = await db.selectCustomers();
                                                 console.log(clientes);
                                             })();                                            
 
-                                            console.log('UPDATE CLIENTES');
+                                            /*console.log('UPDATE CLIENTES');
                                             const result2 = await db.updateCustomer(id, {watchtime: timer});
-                                            console.log(result2);*/ 
+                                            console.log(result2);*/
                                         }
 
                                         timer = true;
                                     }
-                                }, 30000);
+                                }, 10000);
                             }
 
                             // 5. The API calls this function when the player's state changes.
