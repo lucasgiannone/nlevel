@@ -1,19 +1,18 @@
-async function connect(){
-    if(global.connection && global.connection.state !== 'disconnected')
-        return global.connection;
- 
-    const mysql = require("mysql");
-    const connection = await mysql.createConnection("mysql://u871029417_athon:Vitor@123@92.249.44.207:3306/u871029417_athon");
-    console.log("Conectou no MySQL!");
-    global.connection = connection;
-    return connection;
-}
+let mysql = require('mysql');
+let connection = mysql.createConnection({
+    host: '92.249.44.207',
+    user: 'u871029417_athon',
+    password: 'Vitor@123',
+    database: 'u871029417_athon',
+    });
+    
+connection.connect(function(err) {
+    if (err){ 
+        return console.error('error:' +err.message);
+    }
+    console.log('Connected');
+});
 
-async function updateCustomer(id, customer){
-    const conn = await connect();
-    const sql = 'UPDATE conteudoaluno SET watchtime=? WHERE id=?';
-    const values = [customer.watchtime, id];
-    return await conn.query(sql, values);
+function conn(){
+    
 }
- 
-module.exports = {selectCustomers}
