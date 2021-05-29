@@ -1,6 +1,10 @@
 <?php
+session_start();
 include('../../class/dbconn.php');
+
 $id = $_REQUEST['id_conteudo'];
+$id_usuario = $_SESSION['id_usuario'];
+
 $sql = "SELECT * FROM `conteudo` WHERE id_conteudo = $id";
 
 $query = mysqli_query($conn,$sql);
@@ -57,7 +61,35 @@ while($row = mysqli_fetch_array($query)){
 
                             // 4. The API will call this function when the video player is ready.
                             function onPlayerReady(event) {
-                                event.target.playVideo();
+                                let id_usuario = <?=$id_usuario?>;
+                                let id_conteudo = <?=$id?>;
+                                let timer;
+                                setInterval(function(){ 
+                                    if (player.getPlayerState() != 1){
+                                        timer = false;
+                                        alert(id_usuario+' '+id_conteudo);
+
+                                    } else if (player.getPlayerState() == 1){
+                                        if (timer == true){
+                                            alert("Deu certo;");   
+
+                                            /*(async () => {
+                                                const db = require("./conn");
+                                                console.log('Começou!');
+                                            
+                                                console.log("SELECT * FROM conteudoaluno WHERE id =");
+                                                const clientes = await db.selectCustomers();
+                                                console.log(clientes);
+                                            })();                                            
+
+                                            console.log('UPDATE CLIENTES');
+                                            const result2 = await db.updateCustomer(id, {watchtime: timer});
+                                            console.log(result2);*/ 
+                                        }
+
+                                        timer = true;
+                                    }
+                                }, 30000);
                             }
 
                             // 5. The API calls this function when the player's state changes.
