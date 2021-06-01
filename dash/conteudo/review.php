@@ -12,7 +12,6 @@
         session_destroy();
     } 
 
-    $conteudo = "active";
 ?>
 <!DOCTYPE html>
 <!-- HEAD -->

@@ -156,7 +156,7 @@
                         <ul class="submenu-list list-unstyled">
                         <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/admin/cadastraradm.php">Solicitar Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/admin/alterarconta.php">Alterar Tipo de Conta</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/geradorcertificado/">Gerar Certificados</a></li>
+                            
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/admin/solicitacao.php">Solicitações de Contéudo</a></li>
                         </ul>
                     </div>
