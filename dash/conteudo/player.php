@@ -1,8 +1,39 @@
 <?php
 session_start();
 include('../../class/dbconn.php');
+
+
+/**
+ * Codigo do @author: wyventura
+ * Recebe um posto e finaliza a execução da pagina
+ * deve ser enviado no <b>POST</b> o id do conteudo | id do usuario | contagem de segundos do video
+ * 
+ * @param id_conteudo | id_usuario | contagem
+ * 
+ * 
+ * @reports o exit; serve para não carregar a pagina inteira e finalizar a execucao
+ */
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    
+    $count = $_POST['contagem'];
+    $watchtime = gmdate("H:i:s", $count);
+    
+    $id_conteudo = $_POST['id_conteudo'];
+    $id_usuario = $_POST['id_usuario'];
+    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime' WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
+    $query = mysqli_query($conn,$sql);
+    echo $sql;
+    
+    exit;
+}
+
+
 $id = $_REQUEST['id_conteudo'];
 $id_usuario = $_SESSION['id_usuario'];
+
+
+
+
 
 $sql = "SELECT * FROM `conteudo` WHERE id_conteudo = $id";
 
@@ -12,7 +43,7 @@ while($row = mysqli_fetch_array($query)){
 ?>
 <!DOCTYPE html>
 <!-- HEAD -->
-<html lang="en"> 
+<html lang="pt_br"> 
     <head>
     <!-- CONNJS -->
         <script type="text/javascript" src="conn.js"></script>
@@ -72,9 +103,42 @@ while($row = mysqli_fetch_array($query)){
                     if(event.data == 1){
                         // Timer
                         Interval = setInterval(() => {
-                            contador = contador +1;
+                            contador = contador +2;
                             console.log(contador);
-                        }, 1000);
+                            
+                            /**
+                             * Estou enviando para o formulario atual um post
+                             * submetendo ele para o post lá em cima
+                             * então a pagina atual aceita posta via javascript utilizando XMLhttpRequest
+                             * parametros passando utilizando o POST
+                             * 
+                             * @param id_conteudo
+                             * @param id_usuario
+                             * @param contagem
+                             * 
+                             * @author wyventura
+                             */
+                            var http = new XMLHttpRequest();
+                            //Sera enviado para a mesma pagina a atua
+                            var url = '';
+                            //Parametros os dados a serem enviado
+                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador;
+                            //Abre uma conexão sera enviado um posto interno
+                            http.open('POST', url, true);
+                            
+                            //Seta o cabeçalho
+                            http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                            
+                            //O que fazer quando finalizar o envio
+                            http.onreadystatechange = function() {//Call a function when the state changes.
+                            //Caso de sucesso enviar os dados por post para a pagina atual
+                                if(http.readyState == 4 && http.status == 200) {
+                                    console.log(http.responseText);
+                                }
+                            }
+                            //Envia o post para a pagina atual no php request method == 'POST'
+                            http.send(params);
+                        }, 2000);
                         // Log
                         console.log('Video Rodando');
                     }
