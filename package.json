@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/lucasgiannone/nlevel/issues"
   },
-  "homepage": "https://github.com/lucasgiannone/nlevel#readme"
+  "homepage": "https://github.com/lucasgiannone/nlevel#readme",
+  "dependencies": {
+    "mysql2": "^2.2.5"
+  }
 }
