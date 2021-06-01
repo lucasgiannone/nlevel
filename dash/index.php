@@ -35,8 +35,11 @@
         <div class="container px-5">
             <h1 class="page-title">
                 Bem vindo ao portal, <?php echo splitName($_SESSION['nome']);
-                ?>!
-            </h1>    
+                ?>
+            </h1>
+            <?php 
+                 if($_SESSION['perfil'] <= 2 || $_SESSION['perfil'] == 4){
+                ?>    
             <br>
             <h4>
             Nossas palestras e eventos garantem um excelente certificado de treinamento. Caso seja do seu interesse 
@@ -45,6 +48,9 @@
             <h4>
             Por favor, para conversar no chat das palestras ao vivo, entre com a sua conta da google.
             </h4>
+            <?php 
+                 }
+            ?> 
         </div>
     </div>
 </div>
