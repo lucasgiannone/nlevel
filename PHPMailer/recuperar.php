@@ -46,6 +46,7 @@
             echo "
                 <script>
                     alert('Não encontrado esse email');
+                    window.location.href='/esqueceu.php';
                 </script>
             ";
         }

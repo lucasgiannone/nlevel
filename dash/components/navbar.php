@@ -79,7 +79,7 @@
                 </li>
 
                 <?php
-                    if($_SESSION['perfil'] == 1 || ($_SESSION['perfil'] >=3)){
+                    if($_SESSION['perfil'] == 1 || ($_SESSION['perfil'] ==4)){
                 ?>
 
 
@@ -106,7 +106,7 @@
                     </div>
                 </li>
                 <?php 
-                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] >= 3){
+                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 4){
                         
                 ?>
                 <!-- CAMPO DO PALESTRANTE -->

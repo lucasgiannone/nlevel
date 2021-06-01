@@ -40,7 +40,10 @@
             <br>
             <h4>
             Nossas palestras e eventos garantem um excelente certificado de treinamento. Caso seja do seu interesse 
-            assista 100% para garantir o seu certificado.
+            assista 70% para garantir o seu certificado.
+            </h4>
+            <h4>
+            Por favor, para conversar no chat das palestras ao vivo, entre com a sua conta da google.
             </h4>
         </div>
     </div>

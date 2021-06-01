@@ -23,7 +23,7 @@ require_once "./components/nav.php"
         <div id="heroimg">
             <div id="herotxt">
                 <h1>NEXT LEVEL</h1>
-                <p>Aulas e Palestras</p>
+                <p>Palestras e Eventos</p>
                 <br>
                 <a href="./sobre.php"><button id="herobtn">Saber mais</button></a>
             </div>
