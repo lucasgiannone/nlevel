@@ -80,12 +80,12 @@
                             </tr>
                             <tr>
                                 <td><label for="img">Imagem</label></td>
-                                <td>
+                                <!-- <td>
                                 <label class="btn">
-                                <i class="fa fa-image"></i> Selecionar Imagem <input type="file" style="display: none;" name="img" required>
+                                <i class="fa fa-image"></i> Selecionar Imagem <input type="file" style="display: ;" name="img" required>
                                 </label>
-                                </td>
-                                <!-- <td><input name="img" type="file" required></td>            -->
+                                </td> -->
+                                <td><input name="img" type="file" required></td>
                             </tr>
                             <tr>
                                 <td><label for="nmpal">Nome do Palestrante</label></td>
@@ -93,12 +93,12 @@
                             </tr>
                             <tr>
                                 <td><label for="imgpal">Imagem Palestrante</label></td>
-                                <td>
+                                <!-- <td>
                                 <label class="btn">
-                                <i class="fa fa-image"></i> Selecionar Imagem <input type="file" style="display: none;" name="imgpal" required>
+                                <i class="fa fa-image"></i> Selecionar Imagem <input type="file" style="width-end: 100px;" id="imgpal" name="imgpal" required>
                                 </label>
-                                </td>
-                                <!-- <td><input name="imgpal" type="file" required></td>            -->
+                                </td> -->
+                                <td><input name="imgpal" type="file" required></td>
                             </tr>
                         </table>
                         <button class="btn" >Confirmar</button>
