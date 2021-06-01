@@ -79,7 +79,7 @@
                 </li>
 
                 <?php
-                    if($_SESSION['perfil'] == 1 || ($_SESSION['perfil'] >=3)){
+                    if($_SESSION['perfil'] == 1 || ($_SESSION['perfil'] ==4)){
                 ?>
 
 
@@ -102,12 +102,11 @@
                     <div id="submenu-4" class="submenu submenu-4 <?=$utoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link <?= $ulink[0]?>" href="/dash/usuario/">Seu Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?= $ulink[1]?>" href="#">Seus Certificados</a></li>
                         </ul>
                     </div>
                 </li>
                 <?php 
-                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] >= 3){
+                    } if($_SESSION['perfil'] == 2 || $_SESSION['perfil'] == 4){
                         
                 ?>
                 <!-- CAMPO DO PALESTRANTE -->
@@ -157,7 +156,7 @@
                         <ul class="submenu-list list-unstyled">
                         <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/admin/cadastraradm.php">Solicitar Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/admin/alterarconta.php">Alterar Tipo de Conta</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/admin/certificado.php">Gerar Certificados</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?=$admlink[2]?>" href="/dash/geradorcertificado/">Gerar Certificados</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/admin/solicitacao.php">Solicitações de Contéudo</a></li>
                         </ul>
                     </div>
