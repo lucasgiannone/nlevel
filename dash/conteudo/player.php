@@ -37,9 +37,9 @@ while($row = mysqli_fetch_array($query)){
                 </div>
                 <script>
                 // 2. This code loads the IFrame Player API code asynchronously.
+                // Contador
+                var contador = 0;
                 var tag = document.createElement('script');
-                // var db = require('./conn');
-
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
                 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -68,20 +68,44 @@ while($row = mysqli_fetch_array($query)){
                 //    The function indicates that when playing a video (state=1),
                 //    the player should play for six seconds and then stop.
                 function onPlayerStateChange(event) {
-                    switch(event.data){
-                        case 0:
-                            alert('Fim de vídeo');
-                            break;
-                        case 1:
-                            conn();
-                            break;
-                        case 2:
-                            alert('Video pausado '+player.getCurrentTime());
-                            break;
+                    
+                    if(event.data == 1){
+                        // Timer
+                        Interval = setInterval(() => {
+                            contador = contador +1;
+                            console.log(contador);
+                        }, 1000);
+                        // Log
+                        console.log('Video Rodando');
+                    }
+                    else if (event.data == 2) {
+                        // Log
+                        console.log('Video Pausado');
+                        // Pause Timer
+                        clearInterval(Interval);
+                    }
+                    else if (event.data == 5 || event.data == -1 || event.data == 3 ) {
+                        console.log('Carregando');
+                        duration = player.getDuration();
+                        console.log(duration);
+                    }
+                    else if (event.data == 0) {
+                        console.log('Video Acabou');
+                        Certificar(duration, contador);
+                        // Pause Timer
+                        clearInterval(Interval);
                     }
                 }
                 function stopVideo() {
                     player.stopVideo();
+                }
+
+                function Certificar(duration, contador){
+                    if(contador >= ((duration/100)*70)){
+                        console.log('Certificado!');
+                    } else {
+                        console.log('Carga horária não atingida.')
+                    }
                 }
                 </script>
             </div>
