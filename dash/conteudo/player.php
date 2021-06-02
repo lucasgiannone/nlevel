@@ -99,7 +99,7 @@ while($row = mysqli_fetch_array($query)){
                     if(event.data == 1){
                         // Timer
                         Interval = setInterval(() => {
-                            contador = contador +5;
+                            contador = contador +15;
                             console.log(contador);
                             
                             /**
@@ -135,7 +135,7 @@ while($row = mysqli_fetch_array($query)){
                             }
                             //Envia o post para a pagina atual no php request method == 'POST'
                             http.send(params);
-                        }, 5000);
+                        }, 15000);
                         // Log
                         console.log('Video Rodando');
                     }
@@ -145,13 +145,15 @@ while($row = mysqli_fetch_array($query)){
                         // Pause Timer
                         clearInterval(Interval);
                     }
-                    else if (event.data == 5 || event.data == -1 || event.data == 3 ) {
-                        if(contador >= duration){
-                            clearInterval(Interval);
-                        }
+                    else if (event.data == 3) {
                         console.log('Carregando');
                         duration = player.getDuration();
                         console.log(duration);
+                        if(contador > duration){
+                            contador = 0;
+                            player.seekTo(contador);
+                            clearInterval(Interval);
+                        }
                     }
                     else if (event.data == 0) {
                         console.log('Video Acabou');
@@ -166,9 +168,11 @@ while($row = mysqli_fetch_array($query)){
 
                 function Certificar(duration, contador){
                     if(contador >= ((duration/100)*70)){
-                        console.log('Certificado!');
+                        alert('Concluído!');
+                        window.location.assign('../');
                     } else {
-                        console.log('Carga horária não atingida.')
+                        alert('Carga horária não atingida.');
+                        window.location.assign(' ');
                     }
                 }
                 </script>
