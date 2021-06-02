@@ -16,30 +16,23 @@ include('../../class/dbconn.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $count = $_POST['contagem'];
-    $watchtime = gmdate("H:i:s", $count);
-    
+    $watchtime = gmdate("H:i:s", $count);    
     $id_conteudo = $_POST['id_conteudo'];
     $id_usuario = $_POST['id_usuario'];
+    $totalVideo = $_POST['totalVideo'];
     $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime' WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
-    $query = mysqli_query($conn,$sql);
-    echo $sql;
-    
+    $query = mysqli_query($conn,$sql);    
     exit;
 }
-
-
 $id = $_REQUEST['id_conteudo'];
 $id_usuario = $_SESSION['id_usuario'];
-
-
-
-
-
-$sql = "SELECT * FROM `conteudo` WHERE id_conteudo = $id";
-
+$sql = "SELECT conteudo.*, conteudoaluno.watchtime FROM conteudo INNER JOIN conteudoaluno ON conteudo.id_conteudo = conteudoaluno.id_conteudo WHERE conteudo.id_conteudo = $id AND conteudoaluno.id_usuario = $id_usuario";
 $query = mysqli_query($conn,$sql);
 
 while($row = mysqli_fetch_array($query)){
+    $time = $row['watchtime'];
+    $dt = new DateTime("1970-01-01 $time", new DateTimeZone('UTC'));
+    $seconds = (int)$dt->getTimestamp();
 ?>
 <!DOCTYPE html>
 <!-- HEAD -->
@@ -70,6 +63,7 @@ while($row = mysqli_fetch_array($query)){
                 // 2. This code loads the IFrame Player API code asynchronously.
                 // Contador
                 var contador = 0;
+                var wt = <?php echo $seconds ;?>;
                 var tag = document.createElement('script');
                 tag.src = "https://www.youtube.com/iframe_api";
                 var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -93,6 +87,8 @@ while($row = mysqli_fetch_array($query)){
                 // 4. The API will call this function when the video player is ready.
                 function onPlayerReady(event) {
                     event.target.playVideo();
+                    player.seekTo(wt);
+                    contador = wt;
                 }
 
                 // 5. The API calls this function when the player's state changes.
@@ -103,7 +99,7 @@ while($row = mysqli_fetch_array($query)){
                     if(event.data == 1){
                         // Timer
                         Interval = setInterval(() => {
-                            contador = contador +2;
+                            contador = contador +5;
                             console.log(contador);
                             
                             /**
@@ -115,14 +111,15 @@ while($row = mysqli_fetch_array($query)){
                              * @param id_conteudo
                              * @param id_usuario
                              * @param contagem
+                             * @param totalVideo
                              * 
-                             * @author wyventura
+                             * 
                              */
                             var http = new XMLHttpRequest();
                             //Sera enviado para a mesma pagina a atua
                             var url = '';
                             //Parametros os dados a serem enviado
-                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador;
+                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador+'&totalVideo='+player.getDuration();
                             //Abre uma conexão sera enviado um posto interno
                             http.open('POST', url, true);
                             
@@ -133,12 +130,12 @@ while($row = mysqli_fetch_array($query)){
                             http.onreadystatechange = function() {//Call a function when the state changes.
                             //Caso de sucesso enviar os dados por post para a pagina atual
                                 if(http.readyState == 4 && http.status == 200) {
-                                    console.log(http.responseText);
+                                   console.log(http.responseText);
                                 }
                             }
                             //Envia o post para a pagina atual no php request method == 'POST'
                             http.send(params);
-                        }, 2000);
+                        }, 5000);
                         // Log
                         console.log('Video Rodando');
                     }
@@ -149,6 +146,9 @@ while($row = mysqli_fetch_array($query)){
                         clearInterval(Interval);
                     }
                     else if (event.data == 5 || event.data == -1 || event.data == 3 ) {
+                        if(contador >= duration){
+                            clearInterval(Interval);
+                        }
                         console.log('Carregando');
                         duration = player.getDuration();
                         console.log(duration);
