@@ -2,9 +2,11 @@
 include('../../class/dbconn.php');
 
 $id = $_REQUEST['id_conteudo'];
-$sql = "SELECT * FROM `conteudo` WHERE id_conteudo = $id";
-
+$sql = "SELECT * FROM `conteudo` c INNER JOIN conteudoaluno ca on c.id_conteudo = ca.id_conteudo WHERE c.id_conteudo = $id LIMIT 1";
 $query = mysqli_query($conn,$sql);
+
+
+
 
 while($row = mysqli_fetch_array($query)){
     $row["img"] = '../assets/images/conteudo/'. '' . $row['imagem'];
@@ -13,6 +15,7 @@ while($row = mysqli_fetch_array($query)){
     $mes_ref = $mes_ref->format('d/m/Y H:i');
 
 ?>
+
 <style>
 .img-pal{
     display: inline-block;
@@ -78,8 +81,21 @@ while($row = mysqli_fetch_array($query)){
                 </div>
                 <div class="row">
                     <div class="col-12">
+                    <?php
+                        if ($row['concluiu'] == 0 ){
+
+                        
+                    ?>
                         <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
-                    </div>    
+                
+                    <?php
+                    }else{
+                    ?>
+                        <a style="float:right;" href="/dash/usuario/certificados.php" class="btn"><strong>Certificado</strong></a>
+                    <?php
+                    }
+                    ?>
+                        </div>    
                 </div>
                 <?php 
                 }
