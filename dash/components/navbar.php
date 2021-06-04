@@ -80,7 +80,7 @@
                 </li>
 
                 <?php
-                    if($_SESSION['perfil'] == 1 || ($_SESSION['perfil'] ==4)){
+                    if($_SESSION['perfil'] < 4 || ($_SESSION['perfil'] > 0)){
                 ?>
 
 
@@ -103,6 +103,7 @@
                     <div id="submenu-4" class="submenu submenu-4 <?=$utoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link <?= $ulink[0]?>" href="/dash/usuario/">Seu Conteúdo</a></li>
+                            <li class="submenu-item"><a class="submenu-link <?= $ulink[1]?>" href="/dash/usuario/certificados.php">Certificados</a></li>
                         </ul>
                     </div>
                 </li>
@@ -130,8 +131,6 @@
                     <div id="submenu-2" class="collapse submenu submenu-2 <?=$paltoggle[1]?> collapse" data-parent="#menu-accordion">
                         <ul class="submenu-list list-unstyled">
                             <li class="submenu-item"><a class="submenu-link <?=$pallink[0]?>" href="/dash/palestrante/cadastrar.php">Solicitar Conteúdo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?= $pallink[1]?>" href="/dash/palestrante/">Seu Conteúdo</a></li>
-
                         </ul>
                     </div>
                 </li>
@@ -158,7 +157,6 @@
                         <li class="submenu-item"><a class="submenu-link     <?=$admlink[0]?>" href="/dash/admin/cadastraradm.php">Solicitar Conteúdo</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[1]?>" href="/dash/admin/alterarconta.php">Alterar Tipo de Conta</a></li>
                             <li class="submenu-item"><a class="submenu-link <?=$admlink[3]?>" href="/dash/admin/solicitacao.php">Solicitações de Contéudo</a></li>
-                            <li class="submenu-item"><a class="submenu-link <?=$admlink[4]?>" href="/dash/admin/">Seu Contéudo</a></li>
                         </ul>
                     </div>
                 </li>

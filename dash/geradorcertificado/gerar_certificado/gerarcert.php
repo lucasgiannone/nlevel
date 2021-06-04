@@ -1,25 +1,27 @@
 <?php
-setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese' );
-date_default_timezone_set( 'America/Sao_Paulo' );
-require('./fpdf/alphapdf.php');
-require('./PHPMailer/class.phpmailer.php');
+    require_once '../../../class/usuarios.php';
+    session_start();
+    setlocale( LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese' );
+    date_default_timezone_set( 'America/Sao_Paulo' );
+    require('./fpdf/alphapdf.php');
+    require('./PHPMailer/class.phpmailer.php');
 
 
 // --------- Variáveis do Formulário ----- //
-$id       = $_POST['id_usuario'];
+$id = $_SESSION['id_usuario'];
 $email    = $_POST['email'];
 $nome     = utf8_decode($_POST['nome']);
 // $cpf      = $_POST['cpf'];
 
 // --------- Variáveis que podem vir de um banco de dados por exemplo ----- //
 $empresa  = "NextLevel - Athon Ensino Superior";
-$curso    = $_POST['titulo'];
-$data     = $_POST['dtconclusao'];
-$carga_h  = "1 hora";
+$curso    = "CISCO";
+$data     = "27/05/2021";
+$carga_h  = "180 horas";
 
 
 $texto1 = utf8_decode($empresa);
-$texto2 = utf8_decode("pela participação no ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
+$texto2 = utf8_decode("pela participação na palestra ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
 $texto3 = utf8_decode("São Paulo, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
 
 
@@ -52,12 +54,12 @@ $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
 $pdf->SetXY(20,110); //Parte chata onde tem que ficar ajustando a posição X e Y
 $pdf->MultiCell(265, 10, $texto2, '', 'C', 0); // Tamanho width e height e posição
 
-// // Mostrar a data no final
-// $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
-// $pdf->SetXY(32,172); //Parte chata onde tem que ficar ajustando a posição X e Y
-// $pdf->MultiCell(165, 10, $texto3, '', 'L', 0); // Tamanho width e height e posição
+// Mostrar a data no final
+$pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
+$pdf->SetXY(32,172); //Parte chata onde tem que ficar ajustando a posição X e Y
+$pdf->MultiCell(165, 10, $texto3, '', 'L', 0); // Tamanho width e height e posição
 
-$pdfdoc = $pdf->Output('','S');
+$pdfdoc = $pdf->Output('', 'D');
 
 
 
@@ -76,10 +78,10 @@ $pdfdoc = $pdf->Output('','S');
 // $mail->addStringAttachment($pdfdoc, 'certificado.pdf');
 // $mail->Send();
 
-// $certificado="arquivos/$id.pdf"; //atribui a variável $certificado com o caminho e o nome do arquivo que será salvo (vai usar o CPF digitado pelo usuário como nome de arquivo)
+// $certificado="arquivos/.pdf"; //atribui a variável $certificado com o caminho e o nome do arquivo que será salvo (vai usar o CPF digitado pelo usuário como nome de arquivo)
 // $pdf->Output($certificado,'S'); //Salva o certificado no servidor (verifique se a pasta "arquivos" tem a permissão necessária)
-// Utilizando esse script provavelmente o certificado ficara salvo em www.seusite.com.br/gerar_certificado/arquivos/999.999.999-99.pdf (o 999 representa o CPF digitado pelo usuário)
+// // Utilizando esse script provavelmente o certificado ficara salvo em www.seusite.com.br/gerar_certificado/arquivos/999.999.999-99.pdf (o 999 representa o CPF digitado pelo usuário)
 
-$pdf->Output(); // Mostrar o certificado na tela do navegador
+// $pdf->Output(); // Mostrar o certificado na tela do navegador
 
 ?>
