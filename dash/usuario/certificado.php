@@ -1,5 +1,6 @@
 <?php
 include('../../class/dbconn.php');
+require_once '../../class/usuarios.php';
 
 $sql = 
 "SELECT conteudoaluno.*, conteudo.titulo, usuarios.nome, usuarios.email 
@@ -8,7 +9,7 @@ LEFT JOIN `conteudo`
 ON conteudoaluno.id_conteudo = conteudo.id_conteudo 
 LEFT JOIN `usuarios`
 ON conteudoaluno.id_usuario = usuarios.id_usuario
-WHERE conteudoaluno.id_usuario = 1
+WHERE conteudoaluno.id_usuario = {$_SESSION['id_usuario']}
 ORDER BY `dtconclusao` DESC";
 
 $query = mysqli_query($conn,$sql);

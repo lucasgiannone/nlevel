@@ -111,7 +111,6 @@ while($row = mysqli_fetch_array($query)){
                             console.log(contador);
                             if(contador >= ((player.getDuration()/100)*70)){
                                 check = 1;
-                                alert('Concluído!');
                             } else {
                                 check = 0;
                             }
@@ -158,7 +157,9 @@ while($row = mysqli_fetch_array($query)){
                     }
                     else if (event.data == 0) {
                         console.log('Video Acabou');
-                        if(contador < ((duration/100)*70)){
+                        if(contador >= ((player.getDuration()/100)*70)){
+                            alert('Carga horária atingida, acesse seu certificado em nossa plataforma.');
+                        } else if(contador < ((duration/100)*70)){
                             alert('Assista novamente, carga horária não atingida.');
                         }
                         // Pause Timer
