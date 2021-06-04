@@ -19,7 +19,7 @@ $carga_h  = "1 hora";
 
 
 $texto1 = utf8_decode($empresa);
-$texto2 = utf8_decode("pela participação no ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
+$texto2 = utf8_decode("pela participação na palestra de ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
 $texto3 = utf8_decode("São Paulo, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
 
 

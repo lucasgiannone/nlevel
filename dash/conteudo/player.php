@@ -16,11 +16,13 @@ include('../../class/dbconn.php');
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $count = $_POST['contagem'];
-    $watchtime = gmdate("H:i:s", $count);    
+    $watchtime = gmdate("H:i:s", $count);
     $id_conteudo = $_POST['id_conteudo'];
     $id_usuario = $_POST['id_usuario'];
     $totalVideo = $_POST['totalVideo'];
-    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime' WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
+    $dtconclusao = $_POST['dtconclusao'];
+    $concluiu = $_POST['check'];
+    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime', `concluiu` = $concluiu, `dtconclusao` = NOW() WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
     $query = mysqli_query($conn,$sql);    
     exit;
 }
@@ -62,7 +64,13 @@ while($row = mysqli_fetch_array($query)){
                 <script>
                 // 2. This code loads the IFrame Player API code asynchronously.
                 // Contador
+                var today = new Date();
+                // var dd = String(today.getDate()).padStart(2, '0');
+                // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                // var yyyy = today.getFullYear();
+                // today = mm + '/' + dd + '/' + yyyy;
                 var contador = 0;
+                var check = 0;
                 var wt = <?php echo $seconds ;?>;
                 var tag = document.createElement('script');
                 tag.src = "https://www.youtube.com/iframe_api";
@@ -101,26 +109,19 @@ while($row = mysqli_fetch_array($query)){
                         Interval = setInterval(() => {
                             contador = contador +15;
                             console.log(contador);
-                            
-                            /**
-                             * Estou enviando para o formulario atual um post
-                             * submetendo ele para o post lá em cima
-                             * então a pagina atual aceita posta via javascript utilizando XMLhttpRequest
-                             * parametros passando utilizando o POST
-                             * 
-                             * @param id_conteudo
-                             * @param id_usuario
-                             * @param contagem
-                             * @param totalVideo
-                             * 
-                             * 
-                             */
+                            if(contador >= ((player.getDuration()/100)*70)){
+                                check = 1;
+                                alert('Concluído!');
+                            } else {
+                                check = 0;
+                            }
+                            // Create XML
                             var http = new XMLHttpRequest();
                             //Sera enviado para a mesma pagina a atua
                             var url = '';
                             //Parametros os dados a serem enviado
-                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador+'&totalVideo='+player.getDuration();
-                            //Abre uma conexão sera enviado um posto interno
+                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador+'&totalVideo='+player.getDuration()+'&check='+check+'&dtconclusao='+today;
+                            //Abre uma conexão sera enviado um post interno
                             http.open('POST', url, true);
                             
                             //Seta o cabeçalho
@@ -149,7 +150,7 @@ while($row = mysqli_fetch_array($query)){
                         console.log('Carregando');
                         duration = player.getDuration();
                         console.log(duration);
-                        if(contador > duration){
+                        if(contador+1 >= duration){
                             contador = 0;
                             player.seekTo(contador);
                             clearInterval(Interval);
@@ -157,7 +158,9 @@ while($row = mysqli_fetch_array($query)){
                     }
                     else if (event.data == 0) {
                         console.log('Video Acabou');
-                        Certificar(duration, contador);
+                        if(contador < ((duration/100)*70)){
+                            alert('Assista novamente, carga horária não atingida.');
+                        }
                         // Pause Timer
                         clearInterval(Interval);
                     }
@@ -166,15 +169,6 @@ while($row = mysqli_fetch_array($query)){
                     player.stopVideo();
                 }
 
-                function Certificar(duration, contador){
-                    if(contador >= ((duration/100)*70)){
-                        alert('Concluído!');
-                        window.location.assign('../');
-                    } else {
-                        alert('Carga horária não atingida.');
-                        window.location.assign(' ');
-                    }
-                }
                 </script>
             </div>
             <div class="col-sm-12 col-md-4 p-0 m-0">
