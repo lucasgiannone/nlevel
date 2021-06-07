@@ -211,6 +211,7 @@
                 echo "
                 <script>
                     alert(\"Contéudo solicitado com sucesso\");
+                    location.assign('/dash/conteudo/');
                 </script>
                 ";
             } else {
