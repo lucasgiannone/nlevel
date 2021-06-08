@@ -102,29 +102,36 @@
                                 while ($row = mysqli_fetch_assoc($query)) {
                                     $row["Aceitar"] = "<button class='btn btn-success' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=1&id_conteudo={$row['id_conteudo']}'>Aceitar</a></button>";
                                     $row["Recusar"] = "<button class='btn btn-danger' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
+                                    $row["DATA"] = DateTime::createFromFormat("Y-m-d H:i:s", $row["data"]);
+                                    $row["DATA"] = $row["DATA"]->format("d/m/Y H:i:s");
                                     $conteudo[] = $row;
                                 }
-                                
-                                $index = array_keys(current($conteudo));
                                 ?>
                                 <table class="table table-hover">
                                     <thead>
                                     <?php  
-                                        foreach ($index as $value){
-                                            echo "
-                                                <th>$value</th>
-                                            ";
-                                        }
+                                        echo "
+                                            <tr>
+                                            <th>Título</th>
+                                            <th>Descrição</th>
+                                            <th class=''>Data</th>
+                                            <th>Usuario</th>
+                                            <th></th>
+                                            <th></th>
+                                            </tr>
+                                        ";
                                     ?>
                                     </thead>
                                     <tbody>
                                     <?php
                                         foreach ($conteudo as $values){
                                             echo "<tr>";
-                                            foreach ($values as $value)
-                                            echo "
-                                                <td>$value</td>
-                                            ";
+                                            echo "<td>{$values['titulo']}</td>";
+                                            echo "<td>{$values['descricao']}</td>";
+                                            echo "<td>{$values['DATA']}</td>";
+                                            echo "<td>{$values['palestrante']}</td>";
+                                            echo "<td>{$values['Aceitar']}</td>";
+                                            echo "<td>{$values['Recusar']}</td>";
                                             echo "</tr>";
                                         }
                                     ?>
