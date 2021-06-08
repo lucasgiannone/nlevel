@@ -22,7 +22,7 @@
 <!-- HEAD -->
 <html lang="en"> 
     <head>
-        <title>Solicitação de conteúdo</title>
+        <title>Alterar conta</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Dependencias -->

@@ -15,6 +15,7 @@ LEFT JOIN `conteudo` cc ON
 WHERE c.id_usuario = {$_SESSION['id_usuario']}
 ORDER BY dtcadastro DESC
 ";
+
 break;
 case 1:
     $sql = "SELECT 
@@ -27,6 +28,7 @@ ORDER BY dtcadastro DESC
 
 break;
 }
+
 
 $query = mysqli_query($conn,$sql);
 

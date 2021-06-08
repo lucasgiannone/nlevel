@@ -22,7 +22,7 @@
 <!-- HEAD -->
 <html lang="en"> 
     <head>
-        <title>Seu conteúdo</title>
+        <title>Certificados</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Dependencias -->
@@ -72,4 +72,3 @@
     <script src="../assets/js/app.js"></script> 
 </body>
 </html>
-
