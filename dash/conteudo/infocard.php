@@ -71,29 +71,35 @@ while($row = mysqli_fetch_array($query)){
                     <?php 
                     } else{
                     ?>
-                            <div class="col-6 mt-3">
+                    
+                    <?php
+                     $sqlc = "SELECT conteudoaluno.* FROM conteudoaluno WHERE id_usuario = $ids AND id_conteudo = $id";
+                     $queryc = mysqli_query($conn, $sqlc);
+                     $rowc = mysqli_fetch_array($queryc);
+                    if ($rowc['concluiu'] == 0){
+                        ?>
+                         <div class="col-12">
+                        <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                             <div class="col-12">
                                 <a style="float:right;" href="/dash/conteudo/player.php?id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Assistir</strong></a>
                             </div>
                     <?php
                     }
-                    $sqlc = "SELECT conteudoaluno.concluiu FROM conteudoaluno WHERE id_usuario = $ids AND id_conteudo = $id";
+                    $sqlc = "SELECT conteudoaluno.* FROM conteudoaluno WHERE id_usuario = $ids AND id_conteudo = $id";
                     $queryc = mysqli_query($conn, $sqlc);
                     $rowc = mysqli_fetch_array($queryc);
                     if ($rowc['concluiu'] == 1 ){
                     ?>
                         <div class="col-12">
-                            <a style="float:right;" href="/dash/usuario/certificados.php" class="btn"><strong>Certificado</strong></a>
-                                
+                            <a style="float:right;" href="/dash/usuario/certificados.php" class="btn"><strong>Certificado</strong></a>    
                         </div>
                         <?php
-                        } else if ($rowc['concluiu'] == 0){
-                        ?>
-                        <div class="col-12">
-                        <a style="float:right;" href="../../class/conteudo.php?btn=2&id_conteudo=<?=$row['id_conteudo']?>" class="btn"><strong>Cancelar Inscrição</strong></a>
-                        </div>
-                    <?php
-                    }
-                    ?>   
+                        } 
+                        ?>   
                     <?php
                             if($_SESSION['perfil'] == 3 || $_SESSION['perfil'] == 4){
                     ?>                    
