@@ -79,12 +79,8 @@
                                 <td colspan="3"><input name="time" type="time" value="00:00" max="24:59" required></td>          
                             </tr>
                             <tr>
-                                <td><label for="img">Imagem</label></td>
-                                <!-- <td>
-                                <label class="btn">
-                                <i class="fa fa-image"></i> Selecionar Imagem <input type="file" style="display: ;" name="img" required>
-                                </label>
-                                </td> -->
+                                <td><label for="img">Imagem (.JPG)</label></td>
+
                                 <td><input name="img" type="file" required></td>
                             </tr>
                             <tr>
@@ -92,12 +88,8 @@
                                 <td><input name="nmpal" type="text" required></td>        
                             </tr>
                             <tr>
-                                <td><label for="imgpal">Imagem Palestrante</label></td>
-                                <!-- <td>
-                                <label class="btn">
-                                <i class="fa fa-image"></i> Selecionar Imagem <input type="file" style="width-end: 100px;" id="imgpal" name="imgpal" required>
-                                </label>
-                                </td> -->
+                                <td><label for="imgpal">Imagem Palestrante (.JPG)</label></td>
+
                                 <td><input name="imgpal" type="file" required></td>
                             </tr>
                         </table>
