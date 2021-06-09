@@ -81,7 +81,7 @@
                             $pfmask = "Aluno";
                             break;
                         case 2:
-                            $pfmask = "Professor";
+                            $pfmask = "Palestrante";
                             break;
                         case 3:
                             $pfmask = "Administrador";
