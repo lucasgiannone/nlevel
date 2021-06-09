@@ -41,13 +41,15 @@
                  if($_SESSION['perfil'] <= 2 || $_SESSION['perfil'] == 4){
                 ?>    
             <br>
-            <h4>
-            Nossas palestras e eventos garantem um excelente certificado de treinamento. Caso seja do seu interesse 
-            assista 70% para garantir o seu certificado.
-            </h4>
-            <h4>
-            Por favor, para conversar no chat das palestras ao vivo, entre com a sua conta da google.
-            </h4>
+            <div class="m-5 mt-0">
+                <h4>Nossas palestras e eventos garantem um excelente certificado de treinamento. </h4>
+                <h4>Para conversar no chat das palestras ao vivo, garanta que sua conta google está logada.</h4>
+            </div>
+            <div class="m-5">
+                <div class="alert alert-success text-center" role="alert">
+                    <h6 class="text-alert">Assista 70% para garantir o seu certificado.</h6>
+                </div>
+            </div>
             <?php 
                  }
             ?> 

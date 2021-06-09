@@ -22,7 +22,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $totalVideo = $_POST['totalVideo'];
     $dtconclusao = $_POST['dtconclusao'];
     $concluiu = $_POST['check'];
-    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime', `concluiu` = $concluiu, `dtconclusao` = NOW() WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
+    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime', `duration` = '$totalVideo', `concluiu` = $concluiu, `dtconclusao` = NOW() WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
     $query = mysqli_query($conn,$sql);    
     exit;
 }
@@ -110,6 +110,8 @@ while($row = mysqli_fetch_array($query)){
                             contador = contador +15;
                             console.log(contador);
                             if(contador >= ((player.getDuration()/100)*70)){
+                                duration = player.getDuration();
+                                console.log(duration);
                                 check = 1;
                             } else {
                                 check = 0;
@@ -119,7 +121,7 @@ while($row = mysqli_fetch_array($query)){
                             //Sera enviado para a mesma pagina a atua
                             var url = '';
                             //Parametros os dados a serem enviado
-                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador+'&totalVideo='+player.getDuration()+'&check='+check+'&dtconclusao='+today;
+                            var params = 'id_conteudo=<?php echo $id?>&id_usuario=<?php echo $id_usuario?>&contagem='+contador+'&totalVideo='+duration+'&check='+check+'&dtconclusao='+today;
                             //Abre uma conexão sera enviado um post interno
                             http.open('POST', url, true);
                             

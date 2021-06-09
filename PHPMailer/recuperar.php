@@ -17,8 +17,6 @@
 
             $sql = "UPDATE usuarios SET senha = '".md5($md5)."' WHERE email = '$email'";
 
-            echo $sql;
-            // die;
 
             if (mysqli_query($conn, $sql)){                    
                 $assunto = 'Recuperar Senha';

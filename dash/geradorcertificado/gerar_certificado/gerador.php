@@ -13,11 +13,11 @@ $nome     = utf8_decode($_POST['nome']);
 $empresa  = "NextLevel - Athon Ensino Superior";
 $curso    = $_POST['titulo'];
 $data     = $_POST['dtconclusao'];
-$carga_h  = "1 hora";
+$carga_h  = $_POST['duration'];
 
 
 $texto1 = utf8_decode($empresa);
-$texto2 = utf8_decode("pela participação na palestra de ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h.".");
+$texto2 = utf8_decode("pela participação na palestra de ".$curso." \n realizado em ".$data." com carga horária total de ".$carga_h."");
 $texto3 = utf8_decode("São Paulo, ".utf8_encode(strftime( '%d de %B de %Y', strtotime( date( 'Y-m-d' ) ) )));
 
 
@@ -50,7 +50,7 @@ $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
 $pdf->SetXY(20,110); //Parte chata onde tem que ficar ajustando a posição X e Y
 $pdf->MultiCell(265, 10, $texto2, '', 'C', 0); // Tamanho width e height e posição
 
-$pdfdoc = $pdf->Output('','S');
+$pdfdoc = $pdf->Output('certificado.pdf','D');
 
 
 $pdf->Output(); // Mostrar o certificado na tela do navegador
