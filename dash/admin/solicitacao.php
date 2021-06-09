@@ -115,7 +115,7 @@
                                             <th>Título</th>
                                             <th>Descrição</th>
                                             <th class=''>Data</th>
-                                            <th>Usuario</th>
+                                            <th>Palestrante</th>
                                             <th></th>
                                             <th></th>
                                             </tr>
