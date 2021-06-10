@@ -107,7 +107,7 @@ while($row = mysqli_fetch_array($query)){
                     if(event.data == 1){
                         // Timer
                         Interval = setInterval(() => {
-                            contador = contador +15;
+                            contador = contador +10;
                             console.log(contador);
                             if(contador >= ((player.getDuration()/100)*70)){
                                 duration = player.getDuration();
@@ -137,7 +137,7 @@ while($row = mysqli_fetch_array($query)){
                             }
                             //Envia o post para a pagina atual no php request method == 'POST'
                             http.send(params);
-                        }, 15000);
+                        }, 10000);
                         // Log
                         console.log('Video Rodando');
                     }
