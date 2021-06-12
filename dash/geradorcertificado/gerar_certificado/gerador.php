@@ -50,7 +50,7 @@ $pdf->SetFont('Arial', '', 15); // Tipo de fonte e tamanho
 $pdf->SetXY(20,110); //Parte chata onde tem que ficar ajustando a posição X e Y
 $pdf->MultiCell(265, 10, $texto2, '', 'C', 0); // Tamanho width e height e posição
 
-$pdfdoc = $pdf->Output('certificado.pdf','D');
+$pdfdoc = $pdf->Output(''.$curso.' - '.$nome.'.pdf','D');
 
 
 $pdf->Output(); // Mostrar o certificado na tela do navegador

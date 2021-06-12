@@ -57,6 +57,14 @@
                 <!-- Form as table -->
                     <form method="POST" enctype="multipart/form-data">
                         <table class="table w-100">
+                            <style>
+                            @media (max-width:768px) {
+                                input{
+                                    width: 100%;
+                            }    
+                            }
+                            
+                            </style>
                             <input name="hidden" type="hidden" value="true">
                             <tr>
                                 <td><label for="titulo">Titulo</label></td>
@@ -64,7 +72,7 @@
                             </tr>
                             <tr>
                                 <td><label for="descricao">Descrição</label></td>
-                                <td><textarea name="descricao" type="text" class="w-100" style="height:100px; font-size:12px" ></textarea></td>                              
+                                <td><textarea id="decricao" name="descricao" type="text" class="w-100" style="height:100px; font-size:12px" ></textarea></td>                              
                             </tr>
                             <tr>
                                 <td><label for="link">URL</label></td>

@@ -13,7 +13,20 @@ while($row = mysqli_fetch_array($query)){
 ?>
 
 <style>
-.img-pal{
+@media (min-width:300px) {
+    .img-pal{
+    display: inline-block;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    background-image:url(<?=$row['imgpal']?>);
+    background-position: center;
+    background-size: contain;    
+    background-repeat: no-repeat;
+    }
+}
+@media screen and (min-width:768px) {
+    .img-pal{
     display: inline-block;
     width: 15vw;
     height: 15vw;
@@ -22,7 +35,9 @@ while($row = mysqli_fetch_array($query)){
     background-position: center;
     background-size: contain;    
     background-repeat: no-repeat;
+    }    
 }
+
 </style>
 <div class="app-card app-card-account m-2 shadow-sm d-flex flex-column align-items-start">
     <!-- HEADER -->

@@ -100,8 +100,10 @@
                             if (mysqli_num_rows($query) > 0){
                                 $conteudo = [];
                                 while ($row = mysqli_fetch_assoc($query)) {
-                                    $row["Aceitar"] = "<button class='btn btn-success' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=1&id_conteudo={$row['id_conteudo']}'>Aceitar</a></button>";
-                                    $row["Recusar"] = "<button class='btn btn-danger' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
+                                    $row["img"] = '../assets/images/conteudo/'. '' . $row['imagem'];
+                                    $row["imgpal"] = '../assets/images/conteudo/'. '' . $row['img_palestrante'];
+                                    $row["Aceitar"] = "<button class='btn-lg btn-outline-success' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=1&id_conteudo={$row['id_conteudo']}'>Aceitar</a></button>";
+                                    $row["Recusar"] = "<button class='btn-lg btn-outline-danger' name='btn_conteudo'><a style='color:black;' href='solicitacao.php?btn_conteudo=2&id_conteudo={$row['id_conteudo']}'>Recusar</a></button>";   
                                     $row["DATA"] = DateTime::createFromFormat("Y-m-d H:i:s", $row["data"]);
                                     $row["DATA"] = $row["DATA"]->format("d/m/Y H:i");
                                     $conteudo[] = $row;
@@ -114,8 +116,10 @@
                                             <tr>
                                             <th>Título</th>
                                             <th>Descrição</th>
-                                            <th class=''>Data</th>
+                                            <th>Data</th>
                                             <th>Palestrante</th>
+                                            <th></th>
+                                            <th>Background</th>
                                             <th></th>
                                             <th></th>
                                             </tr>
@@ -130,6 +134,8 @@
                                             echo "<td>{$values['descricao']}</td>";
                                             echo "<td>{$values['DATA']}</td>";
                                             echo "<td>{$values['palestrante']}</td>";
+                                            echo "<td><img src='{$values['imgpal']}' width='50rem' height='50rem'></td>";
+                                            echo "<td><img src='{$values['img']}' width='100rem' height='50rem'></td>";
                                             echo "<td>{$values['Aceitar']}</td>";
                                             echo "<td>{$values['Recusar']}</td>";
                                             echo "</tr>";
