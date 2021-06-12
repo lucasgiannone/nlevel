@@ -136,6 +136,9 @@
 				<label for="feminino">Feminino</label>
 				<input type="radio" id="feminino" name="genero" value="Feminino"
 				<?php if($configgen == 'Feminino'){?> checked <?php } ?> required>
+				<label for="feminino">Outro</label>
+				<input type="radio" id="outro" name="genero" value="Outro"
+				<?php if($configgen == 'Outro'){?> checked <?php } ?> required>
 				<br>
 			</div>
 			<!-- E-MAIL -->

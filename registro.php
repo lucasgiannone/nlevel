@@ -102,6 +102,8 @@ require_once "./components/nav.php"
 				<input type="radio" id="masculino" name="genero" value="Masculino" required>
 				<label for="feminino">Feminino</label>
 				<input type="radio" id="feminino" name="genero" value="Feminino" required>
+				<label for="feminino">Outro</label>
+				<input type="radio" id="feminino" name="genero" value="Outro" required>
 				<br>
 			</div>
 			<!-- E-MAIL -->
