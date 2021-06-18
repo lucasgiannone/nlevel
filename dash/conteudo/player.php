@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('../../class/dbconn.php');
+date_default_timezone_set("America/Sao_Paulo");
 
 
 /**
@@ -21,8 +22,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $id_usuario = $_POST['id_usuario'];
     $totalVideo = $_POST['totalVideo'];
     $dtconclusao = $_POST['dtconclusao'];
+    $dtnow = date('Y-m-d H:i:s');
     $concluiu = $_POST['check'];
-    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime', `duration` = '$totalVideo', `concluiu` = $concluiu, `dtconclusao` = NOW() WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
+    $sql = "UPDATE `conteudoaluno` SET `watchtime` = '$watchtime', `duration` = '$totalVideo', `concluiu` = $concluiu, `dtconclusao` = '$dtnow' WHERE `id_conteudo` = $id_conteudo AND `id_usuario` = $id_usuario";
     $query = mysqli_query($conn,$sql);    
     exit;
 }
@@ -31,10 +33,12 @@ $id_usuario = $_SESSION['id_usuario'];
 $sql = "SELECT conteudo.*, conteudoaluno.watchtime FROM conteudo INNER JOIN conteudoaluno ON conteudo.id_conteudo = conteudoaluno.id_conteudo WHERE conteudo.id_conteudo = $id AND conteudoaluno.id_usuario = $id_usuario";
 $query = mysqli_query($conn,$sql);
 
+
 while($row = mysqli_fetch_array($query)){
     $time = $row['watchtime'];
     $dt = new DateTime("1970-01-01 $time", new DateTimeZone('UTC'));
     $seconds = (int)$dt->getTimestamp();
+    
 ?>
 <!DOCTYPE html>
 <!-- HEAD -->
